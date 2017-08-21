@@ -39,9 +39,3 @@ id                | integer   | not null, primary key
 user_id           | integer   | not null
 project_id        | integer   | not null
 body              | string    | not null
-
-
-
-
-
-##pictures
