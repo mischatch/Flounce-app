@@ -20,13 +20,17 @@ Clone is a portfolio showcase web application inspired by Behance.net built with
 7. Comments
 
 ## Design Docs
-* [View Wireframes](https://github.com/mischatch/Clone-app/blob/master/docs/docs/wireframes)
-* [React Components](https://github.com/mischatch/Clone-app/blob/master/docs/docs/component-hierarchy.md)
-* [API endpoints](https://github.com/mischatch/Clone-app/blob/master/docs/docs/api-endpoints.md)
-* [DB schema](https://github.com/mischatch/Clone-app/blob/master/docs/docs/schema.md)
-* [Sample State](https://github.com/mischatch/Clone-app/blob/master/docs/docs/sample-state.md)
+* [View Wireframes]([wireframes])
+* [React Components][components]
+* [API endpoints][api-endpoints]
+* [DB schema][schema]
+* [Sample State][sample-state]
 
-
+[wireframes]: wireframes
+[components]: component-hierarchy.md
+[sample-state]: sample-state.md
+[api-endpoints]: api-endpoints.md
+[schema]: schema.md
 
 
 ## Implementation Timeline
