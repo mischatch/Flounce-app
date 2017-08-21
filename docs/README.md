@@ -9,7 +9,7 @@
 
 ## Minimum Viable Product
 
-Clone is a portfolio showcase web application inspired by Behance-- built with Ruby on Rails and React/Redux. All MVP features will have smooth, bug-free navigation, adequate seed data and stylish CSS:
+Clone is a portfolio showcase web application inspired by Behance.net built with Ruby on Rails and React/Redux. All MVP features will have smooth, bug-free navigation, adequate seed data and stylish CSS:
 
 1. Hosting on Heroku
 2. Production README
