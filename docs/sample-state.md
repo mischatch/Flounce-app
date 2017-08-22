@@ -2,15 +2,9 @@
 {
   currentUser: {
     id: 1,
-    username: 'SomeUser'
-  },
-  userDetail : {
-    firstName: 'fname',
-    lastName: 'lname',
+    username: 'SomeUser',
     email: 'mail@mail.com',
-    about: 'someTextInfo',
-
-  },
+    about: 'someTextInfo'
   projects: {
     1: {
       id: 1,
@@ -22,21 +16,8 @@
       id: 2,
       title: 'second project',
       description: 'very second project',
-      userId: 1
-    }
-  }
-  projectDetail: {
-    images: {
-      1: {
-        id: 1,
-        imageUrl: 'www.example.com/12344',
-        caption: ''
-      }
-      3: {
-        id: 3,
-        imageUrl: 'www.example.com/456789',
-        caption: ''
-      }
+      userId: 1,
+      image_ids: [1, 2, 3],
     }
   }
   comments: {

@@ -47,7 +47,7 @@ Clone is a portfolio showcase web application inspired by Behance.net built with
 
 **Objective:** Each project has title, description and images. Project show page displays all it's content.
 
-### Phase 4: User profile (1 day)
+### Phase 4: User profile (1 day)(BoNUS)
 
 **Objective:** Each user has a profile which showcases their projects.
 
