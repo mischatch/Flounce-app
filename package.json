@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "engines": {
-    "node": "6.10.1",
+    "node": "v6.10.1",
     "npm": "3.10.10"
   },
   "scripts": {
