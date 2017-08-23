@@ -5,11 +5,16 @@ import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
-const App = () => (
+const App = () => {
+  let headerClass = 'header';
+  if(window.location.hash === "#/login" || window.location.hash === "#/signup"){
+    headerClass = 'hidden';
+  }
+  return (
   <div>
-    <header className="header">
-      <Link to='/'>
-      <img src={ window.staticImages.logo } alt="logo" className="logo" />
+    <header className={headerClass}>
+      <Link to='/' >
+      <img src={ window.staticImages.logo }  alt="logo" className="logo" />
       </Link>
       <GreetingContainer />
     </header>
@@ -17,6 +22,6 @@ const App = () => (
     <Route path="/login" component={SessionFormContainer} />
     <Route path="/signup" component={SessionFormContainer} />
   </div>
-);
+)};
 
 export default App;

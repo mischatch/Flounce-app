@@ -46,16 +46,14 @@ class SessionForm extends React.Component {
   navLink() {
     if (this.props.formType === 'login') {
       return (
-        <div>
-
-        <h3>Create an account <Link to="/signup" className="link">sign up</Link></h3>
+        <div className="blue-link">
+          Create an account <Link to="/signup" className="link">sign up</Link>
         </div>
         )
     } else {
       return (
         <div className="blue-link">
-
-        <h3>Already have an account? <Link to="/login" className="link">log in</Link></h3>
+          Already have an account? <Link to="/login" className="link">log in</Link>
         </div>
         )
     }
@@ -65,7 +63,7 @@ class SessionForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`error-${i}`} className="errors">
             {error}
           </li>
         ))}
@@ -74,7 +72,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="back">
       <div className="log-form">
@@ -84,9 +81,11 @@ class SessionForm extends React.Component {
             <p className="signup-to-cont">Sign up to continue</p>
           </div>
           <br/>
-            <img src={ window.staticImages.logo2 } alt="logo2" className="logo2" />
+            <Link to="/">
+              <img src={ window.staticImages.logo2 } alt="logo2" className="logo2" />
+            </Link>
           <br/>
-          <h4>{this.navLink()}</h4>
+
 
           <div className="login-form">
             <br/>
@@ -112,10 +111,15 @@ class SessionForm extends React.Component {
                 <button type="submit" onClick={this.demologin} className="demo-button">demo</button>
               </div>
             </div>
+            <div className="navlink">
+              {this.navLink()}
+            </div>
             <br/>
-            <ul className="errors">
-              <li className="errors-div">{this.renderErrors()}</li>
-            </ul>
+            <div className="errors">
+              <ul className="errors">
+                {this.renderErrors()}
+              </ul>
+            </div>
           </div>
         </form>
       </div>

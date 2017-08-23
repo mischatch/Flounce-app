@@ -8,6 +8,10 @@ html {
   font-family: 'adobe-clean', sans-serif;
 }
 
+.hidden {
+  display: none;
+}
+
 .back {
   display: flex;
   justify-content: center;
@@ -31,16 +35,6 @@ div.sighup-to-cont {
   float: left;
   color: black;
   font-size: 10px;
-}
-
-h5 {
-  font-weight: thin;
-  color: #757d86;
-}
-
-h4 {
-  font-size: 14px;
-  color: #757d86;
 }
 
 header {
@@ -70,12 +64,11 @@ a {
   text-decoration: none;
 }
 
-li {
-  margin-left: 20px;
-}
+
 
 ul {
-  margin: 0 auto;
+  margin-left: 8px;
+  list-style: disc;
 }
 
 .logout-cont {
@@ -90,9 +83,7 @@ ul {
   text-align: center;
 }
 
-.link {
-  color: #0057ff;
-}
+
 
 .login-signup {
   margin: 10px;
@@ -169,6 +160,9 @@ ul {
 }
 
 .blue-link {
+  margin-left: 10px;
+  margin-top: 15px;
+  font-size: 13px;
   color: #a7a7a7;
 }
 .blue-link:visited {
@@ -180,7 +174,11 @@ a:visited {
 }
 
 ul.login-signup > li:link {
-  color: white;
+  color: black;
+}
+ul.login-signup > li {
+  list-style: none;
+  margin-left: 20px;
 }
 
 button.demo-button {
@@ -196,6 +194,9 @@ button.demo-button {
 }
 
 p.signup-to-cont {
+  color: grey;
+  font-size: 15px;
+  font-weight: lighter;
   margin-left: 10px;
 }
 
@@ -224,8 +225,35 @@ input.login-input {
   width: 77%;
 }
 
+div.navlink {
+  color: black;
+}
+div.navlink.Link:active {
+  color: #0057ff;
+}
+
+.link:visited {
+  color: #0057ff;
+}
+
+div.errors{
+  display: block;
+  margin-left: 10px;
+}
+
 ul.errors {
-  color: #ff4c72;
+  float: left;
+  font-size: 13px;
+  color: #fd345e;
+  font-weight: lighter;
+  list-style: disc inside none;
+}
+div.errors > ul.errors {
+  list-style: disc inside none;
+}
+div.errors > ul.errors > li {
+  margin-left: 20px;
+  list-style: disc;
 }
 
 .submit-button {
