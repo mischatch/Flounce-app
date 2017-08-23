@@ -9,4 +9,4 @@
 
 User.delete_all
 
-a = User.create!({user: {username: 'Martin', password: "password", email: "mail@mail.com", about: "Just a simple demo User"}})
+a = User.create!(username: 'Martin', password: "password", email: "mail@mail.com", about: "Just a simple demo User")
