@@ -1,3 +1,195 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+html {
+  background-color: #EAEDF6;
+  font-family: Helvetica;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  background-color:  #EAEDF6;
+}
+
+.logo {
+  height: 60px;
+  padding-left: 20px;
+  float: left;
+}
+
+h5 {
+  font-weight: thin;
+  color: #757d86;
+}
+
+h4 {
+  font-size: 14px;
+  color: #757d86;
+}
+
+header {
+  background: black;
+  color: white;
+  height: 60px;
+}
+
+.errors-div {
+  margin: 5px;
+  background-color: inherit;
+  font-size: 14px;
+  color: grey;
+  width: inherit;
+  align-content: center;
+  text-align: center;
+  opacity: 0.6;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  margin-left: 20px;
+}
+
+ul {
+  margin: 0 auto;
+}
+
+.logout-cont {
+  text-align: center;
+}
+
+.blue-button {
+  display: flex;
+  justify-content: center;
+  align-self: baseline;
+  align-content: space-between;
+  text-align: center;
+}
+
+.link {
+  color: #0057ff;
+}
+
+.login-signup {
+  margin: 10px;
+  margin-right: 115px;
+  text-transform: uppercase;
+  background-color: #0057ff;
+  font-size: 12px;
+  cursor: pointer;
+  height: 39px;
+  font-weight: 400;
+  border-radius: 40px;
+  min-height: 30px;
+  width: 145px;
+  line-height: 40px;
+  align-self: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.login-signup:hover {
+  background-color: #003ad3;
+}
+
+.header-name {
+  text-align: right;
+  margin-right: 13px;
+  line-height: 60px;
+  color: #a7a7a7;
+}
+
+.header-group {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  text-align: center;
+}
+.header-button:hover {
+  background-color: #003ad3;
+}
+
+.header-button {
+  margin: 13px;
+  margin-right: 35px;
+  text-transform: uppercase;
+  background-color: #0057ff;
+  font-size: 12px;
+  cursor: pointer;
+  color: white;
+  border: 3px solid #0057ff;
+  font-weight: 400;
+  border-radius: 40px;
+  min-height: 30px;
+  width: 130px;
+  line-height: 24px;
+  align-self: center;
+  text-align: center;
+  top: auto;
+}
+
+.log-form {
+  text-align: center;
+}
+
+.login-form-container {
+  margin: 20px;
+  width: 350px;
+  height: 250px;
+  background-color: inherit;
+  display: block;
+  color: #a7a7a7;
+  font-size: 20px;
+  opacity: 0.8;
+
+}
+
+.blue-link {
+  color: #a7a7a7;
+}
+.blue-link:visited {
+  color: #a7a7a7;
+}
+
+a:visited {
+    color: white;
+}
+
+input.login-input {
+  font-style: italic;
+  height: 25px;
+  margin: 10px;
+  border-radius: 4px;
+  border: none;
+  padding: 0 0 1px 12px;
+
+}
+
+.submit-button {
+  height: 25px;
+  width: 30%;
+  border: 1px solid #e1e1e1;
+  border-radius: 40px;
+  text-overflow: ellipsis;
+  border-width: 1px;
+  color: white;
+  background-color: #0057ff;
+  margin-left: 12px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

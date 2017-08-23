@@ -31,9 +31,19 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
+      return (
+        <div>
+        <h2>Sign in to continue</h2>
+        <h3>Create an account <Link to="/signup" className="link">sign up</Link></h3>
+        </div>
+        )
     } else {
-      return <Link to="/login">log in instead</Link>;
+      return (
+        <div className="blue-link">
+        <h2>Sign up to continue</h2>
+        <h3>Already have an account? <Link to="/login" className="link">log in</Link></h3>
+        </div>
+        )
     }
   }
 
@@ -51,34 +61,37 @@ class SessionForm extends React.Component {
 
   render() {
     return (
+      <div className="back">
+      <div className="log-form">
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Clone app
+          <h5>Welcome to Clone app</h5>
           <br/>
-          Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
+          <h4>{this.navLink()}</h4>
+
           <div className="login-form">
             <br/>
-            <label>Username:
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
+                placeholder="username"
                 className="login-input"
               />
-            </label>
             <br/>
-            <label>Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
+                placeholder="password"
                 className="login-input"
               />
-            </label>
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value={this.props.formType} className="submit-button" />
+              <div className="errors-div">{this.renderErrors()}</div>
           </div>
         </form>
       </div>
+    </div>
+  </div>
     );
   }
 }

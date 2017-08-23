@@ -7,8 +7,10 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <header>
-      <h2>Clone app workinprogress</h2>
+    <header className="header">
+      <Link to='/'>
+      <img src={ window.staticImages.logo } alt="logo" className="logo" />
+      </Link>
       <GreetingContainer />
     </header>
 
