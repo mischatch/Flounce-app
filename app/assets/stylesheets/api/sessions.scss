@@ -5,7 +5,7 @@
 
 html {
   background-color: #EAEDF6;
-  font-family: Helvetica;
+  font-family: 'adobe-clean', sans-serif;
 }
 
 .back {
@@ -18,6 +18,19 @@ html {
   height: 60px;
   padding-left: 20px;
   float: left;
+}
+
+.logo2 {
+  width: 100px;
+  float: left;
+  padding-left: 10px;
+}
+
+div.sighup-to-cont {
+  font-weight: lighter;
+  float: left;
+  color: black;
+  font-size: 10px;
 }
 
 h5 {
@@ -140,7 +153,7 @@ ul {
 }
 
 .log-form {
-  text-align: center;
+  // text-align: center;
 }
 
 .login-form-container {
@@ -148,9 +161,9 @@ ul {
   width: 350px;
   height: 250px;
   background-color: inherit;
-  display: block;
-  color: #a7a7a7;
-  font-size: 20px;
+  // display: block;
+  // color: #a7a7a7;
+  // font-size: 20px;
   opacity: 0.8;
 
 }
@@ -166,6 +179,41 @@ a:visited {
     color: white;
 }
 
+ul.login-signup > li:link {
+  color: white;
+}
+
+button.demo-button {
+  height: 25px;
+  width: 60%;
+  border: 1px solid #e1e1e1;
+  border-radius: 40px;
+  text-overflow: ellipsis;
+  border-width: 1px;
+  color: white;
+  background-color: #0057ff;
+  margin-left: 12px;
+}
+
+p.signup-to-cont {
+  margin-left: 10px;
+}
+
+div.two-buttons {
+  display: flex;
+  margin-top: 10px;
+}
+
+div.first-submit {
+  float: left;
+  width: 100%;
+}
+
+div.demo-button-div {
+  float: left;
+  width: 100%;
+}
+
 input.login-input {
   font-style: italic;
   height: 25px;
@@ -173,12 +221,16 @@ input.login-input {
   border-radius: 4px;
   border: none;
   padding: 0 0 1px 12px;
+  width: 77%;
+}
 
+ul.errors {
+  color: #ff4c72;
 }
 
 .submit-button {
   height: 25px;
-  width: 30%;
+  width: 60%;
   border: 1px solid #e1e1e1;
   border-radius: 40px;
   text-overflow: ellipsis;
@@ -189,7 +241,7 @@ input.login-input {
 }
 
 .login-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
 }

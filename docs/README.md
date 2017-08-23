@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.clone.herokuapp.com
+[heroku]: https://clone-app.herokuapp.com/
 [trello]: https://trello.com/b/ALgfuX0Q/clone
 
 ## Minimum Viable Product

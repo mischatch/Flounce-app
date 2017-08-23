@@ -9,12 +9,19 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demologin = this.demologin.bind(this);
+
   }
+
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
+  }
+
+  componentDidMount(){
+    this.props.clearErrors()
   }
 
   update(field) {
@@ -29,18 +36,25 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
+  demologin(e){
+    e.preventDefault();
+    const demoUser = { user: {username: 'Martin', password: "password", email: "mail@mail.com", about: "Just a simple demo User"}};
+    this.props.login( demoUser );
+  }
+
+
   navLink() {
     if (this.props.formType === 'login') {
       return (
         <div>
-        <h2>Sign in to continue</h2>
+
         <h3>Create an account <Link to="/signup" className="link">sign up</Link></h3>
         </div>
         )
     } else {
       return (
         <div className="blue-link">
-        <h2>Sign up to continue</h2>
+
         <h3>Already have an account? <Link to="/login" className="link">log in</Link></h3>
         </div>
         )
@@ -60,12 +74,17 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="back">
       <div className="log-form">
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h5>Welcome to Clone app</h5>
+          <div className="signup-to-cont">
+            <p className="signup-to-cont">Sign up to continue</p>
+          </div>
+          <br/>
+            <img src={ window.staticImages.logo2 } alt="logo2" className="logo2" />
           <br/>
           <h4>{this.navLink()}</h4>
 
@@ -85,8 +104,18 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             <br/>
-            <input type="submit" value={this.props.formType} className="submit-button" />
-              <div className="errors-div">{this.renderErrors()}</div>
+            <div className="two-buttons">
+              <div className="first-submit">
+                <input type="submit" value={this.props.formType} className="submit-button" />
+              </div>
+              <div className="demo-button-div">
+                <button type="submit" onClick={this.demologin} className="demo-button">demo</button>
+              </div>
+            </div>
+            <br/>
+            <ul className="errors">
+              <li className="errors-div">{this.renderErrors()}</li>
+            </ul>
           </div>
         </form>
       </div>
