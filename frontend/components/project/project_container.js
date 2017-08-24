@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    receiveAllProjects: () => dispatch(receiveAllProjects())
+    requestAllProjects: () => dispatch(requestAllProjects())
   };
 };
 

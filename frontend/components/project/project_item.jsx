@@ -1,9 +1,14 @@
-import ProjectIndex from './project_index'
+import React from 'react';
+import ProjectIndex from './project_index';
 
-export const projectItem = props => {
-
-
+const ProjectItem = ({ project }) => {
+  debugger
   return (
-    <li>hey ya</li>
+    <div>
+      <li>{project.title}</li>
+    </div>
+
   )
 }
+
+export default ProjectItem;

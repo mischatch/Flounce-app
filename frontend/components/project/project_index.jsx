@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import ProjectContainer from './project_container';
+import ProjectItem from './project_item';
 
-class ProjectIndex extends Component {
+class ProjectIndex extends React.Component {
 
+  componentWillMount(){
+    this.props.requestAllProjects();
+  }
 
   render(){
     const { projects } = this.props;
-    const projectItems = project.map(project => (
-        <projectItem
-          key={ project.idea }
-          project={ project } />
-      )
-    );
+    if((Object.keys(this.props).length === 0) || (projects === undefined)){
+      return null;
+    }
+
     return (
       <div>
+        <h1>all projects</h1>
         <ul>
-          { projectItem }
+          { projects.map(project => <ProjectItem key={project.id} project={project} />) }
         </ul>
       </div>
     );
