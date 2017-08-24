@@ -14,7 +14,7 @@ class ProjectIndex extends React.Component {
     if((Object.keys(this.props).length === 0) || (projects === undefined)){
       return null;
     }
-
+    debugger
     return (
       <div>
         <h1>all projects</h1>

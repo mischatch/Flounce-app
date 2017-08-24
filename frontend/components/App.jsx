@@ -19,7 +19,9 @@ const App = () => {
       </Link>
       <GreetingContainer />
     </header>
+
       <ProjectContainer />
+
     <Switch>
 
       <Route path="/login" component={SessionFormContainer} />

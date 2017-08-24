@@ -10,6 +10,11 @@
 User.delete_all
 
 a = User.create!(username: 'Martin', password: "password", email: "mail@mail.com", about: "Just a simple demo User")
+b = User.create!(username: 'John', password: "password", email: "mail@mail.com", about: "Just a second demo User")
+c = User.create!(username: 'Billy', password: "password", email: "mail@mail.com", about: "Just a third demo User")
+d = User.create!(username: 'Sam', password: "password", email: "mail@mail.com", about: "Just a fourth demo User")
+e = User.create!(username: 'Dan', password: "password", email: "mail@mail.com", about: "Just a fifth demo User")
+f = User.create!(username: 'Martin2', password: "password", email: "mail@mail.com", about: "Just a sixth demo User")
 
 Project.delete_all
 
