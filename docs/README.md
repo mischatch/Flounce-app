@@ -39,28 +39,28 @@ Clone is a portfolio showcase web application inspired by Behance.net built with
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Project Model, API, and components (2 days)
+### Phase 2: Exploring all portfolios(index page) (2 days)
 
-**Objective:** User can have a porfolio consists of many projects, which can be viewed.
+**Objective:** Main page consits of many portfolios
 
-### Phase 3: Project content (2 days)
+### Phase 3: Portfolio(project) viewing (2 days)
 
 **Objective:** Each project has title, description and images. Project show page displays all it's content.
 
-### Phase 4: User profile (1 day)(BoNUS)
+### Phase 4: Likes (1 day)(BoNUS)
 
-**Objective:** Each user has a profile which showcases their projects.
+**Objective:** Users can appreciate(like) projects.
 
-### Phase 5: Project appreciations(likes) (1 day, W2 Th 6pm)
-
-**Objective:** Users can appreciate projects.
-
-### Phase 6: - Project comments (1 day, W2 F 6pm)
+### Phase 5: Project comments (1 day, W2 Th 6pm)
 
 **Objective:** User can leave a comment under the project. Seen on project show page.
+
+### Phase 6: - User page (1 day, W2 F 6pm)
+
+**Objective:** User can has a page with personal information, his portfolios and ability to create project.
 
 ### Bonus Features (TBD)
 - [ ] Follows(users can follow each other)
 - [ ] Ability to set tags on a project
-- [ ] Project creating/editing
+- [ ] Uploading photos to project
 - [ ] Project views(number showing project was viewed)
