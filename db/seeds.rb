@@ -10,3 +10,8 @@
 User.delete_all
 
 a = User.create!(username: 'Martin', password: "password", email: "mail@mail.com", about: "Just a simple demo User")
+
+Project.delete_all
+
+pr1 = Project.create!(user_id: a.id, title: 'first project', description: 'project description created for testing purposes only')
+pr1 = Project.create!(user_id: a.id, title: 'second project', description: 'project wih a slightly different description created for testing purposes only')
