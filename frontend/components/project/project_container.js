@@ -6,13 +6,13 @@ import { selectAllProjects } from '../../reducers/selectors';
 const mapStateToProps = state => {
   return {
     projects: selectAllProjects(state),
-    currentUser: state.session.currentUser
+    users: state.users,
   };
 };
 
 
 const mapDispatchToProps = dispatch => {
-  debugger
+
   return {
     requestAllProjects: () => dispatch(requestAllProjects())
   };

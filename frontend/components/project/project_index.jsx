@@ -10,17 +10,20 @@ class ProjectIndex extends React.Component {
   }
 
   render(){
-    const { projects } = this.props;
+    const { projects, users } = this.props;
     if((Object.keys(this.props).length === 0) || (projects === undefined)){
       return null;
     }
-    debugger
     return (
-      <div>
-        <h1>all projects</h1>
-        <ul>
-          { projects.map(project => <ProjectItem key={project.id} project={project} />) }
-        </ul>
+      <div className="border-box">
+        <div className="content-box">
+          
+            { projects.map(project => <ProjectItem
+                                        key={project.id}
+                                        project={project}
+                                        users={users} />) }
+        
+        </div>
       </div>
     );
   }

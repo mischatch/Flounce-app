@@ -19,9 +19,9 @@ const App = () => {
       </Link>
       <GreetingContainer />
     </header>
-
+      <div className={headerClass}>
       <ProjectContainer />
-
+      </div>
     <Switch>
 
       <Route path="/login" component={SessionFormContainer} />

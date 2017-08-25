@@ -19,4 +19,8 @@ f = User.create!(username: 'Martin2', password: "password", email: "mail@mail.co
 Project.delete_all
 
 pr1 = Project.create!(user_id: a.id, title: 'first project', description: 'project description created for testing purposes only')
-pr1 = Project.create!(user_id: a.id, title: 'second project', description: 'project wih a slightly different description created for testing purposes only')
+pr2 = Project.create!(user_id: b.id, title: 'second project', description: 'project wih a slightly different description created for testing purposes only')
+pr3 = Project.create!(user_id: c.id, title: 'third project', description: 'project wih a slightly different description created for testing purposes only')
+pr4 = Project.create!(user_id: d.id, title: 'fourth project', description: 'project wih a slightly different description created for testing purposes only')
+pr5 = Project.create!(user_id: e.id, title: 'fifth project', description: 'project wih a slightly different description created for testing purposes only')
+pr6 = Project.create!(user_id: f.id, title: 'sixth project', description: 'project wih a slightly different description created for testing purposes only')
