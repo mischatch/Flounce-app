@@ -11,7 +11,7 @@ const usersReducer = (state = {}, action) => {
       return action.users;
     case RECEIVE_PROJECT:
       const newProject = {[action.user.id]: action.user};
-      return merge({}, state, newProject);
+      return newProject;
     default:
       return state;
   }

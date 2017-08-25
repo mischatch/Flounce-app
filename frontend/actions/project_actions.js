@@ -9,11 +9,14 @@ export const receiveAllProjects = ({projects, users}) => ({
   users
 });
 
-export const receiveProject = ({project, user}) => ({
-  type: RECEIVE_PROJECT,
-  project,
-  user
-});
+export const receiveProject = ({project, user}) => {
+  return {
+      type: RECEIVE_PROJECT,
+      project,
+      user
+    };
+  };
+
 
 
 

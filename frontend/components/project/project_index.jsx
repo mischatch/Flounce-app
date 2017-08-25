@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import ProjectContainer from './project_container';
 import ProjectItem from './project_item';
+import ProjectDetailContainer from "./project_detail_container";
 
 class ProjectIndex extends React.Component {
 
@@ -17,13 +18,14 @@ class ProjectIndex extends React.Component {
     return (
       <div className="border-box">
         <div className="content-box">
-          
+
             { projects.map(project => <ProjectItem
                                         key={project.id}
                                         project={project}
                                         users={users} />) }
-        
+
         </div>
+        <Route path="/projects/:projectId" component={ProjectDetailContainer} />
       </div>
     );
   }

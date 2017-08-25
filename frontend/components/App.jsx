@@ -4,6 +4,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProjectContainer from "./project/project_container";
+import ProjectDetailContainer from './project/project_detail_container';
 
 
 const App = () => {
@@ -19,14 +20,14 @@ const App = () => {
       </Link>
       <GreetingContainer />
     </header>
-      <div className={headerClass}>
-      <ProjectContainer />
-      </div>
+      {/* <div className={headerClass}> */}
+      {/* <ProjectContainer /> */}
+      {/* </div> */}
     <Switch>
-
       <Route path="/login" component={SessionFormContainer} />
       <Route path="/signup" component={SessionFormContainer} />
-
+      <Route path='/projects/:projectId' component={ProjectDetailContainer} />
+      <Route path='/' component={ProjectContainer} />
     </Switch>
   </div>
 )};
