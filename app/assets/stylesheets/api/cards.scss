@@ -46,11 +46,11 @@ div.project-pic {
   background-color: #fcc20f;
   height: 160px;
   border-bottom: .5px solid #d5d7e0;
+  transition: filter 500ms ease-in-out;
 }
 
 div.project-pic:hover {
   filter: brightness(80%);
-  transition: filter 500ms ease-in-out;
 }
 
 div.card-title {

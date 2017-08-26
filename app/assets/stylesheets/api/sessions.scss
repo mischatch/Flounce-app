@@ -8,6 +8,10 @@ body {
   font-family: 'adobe-clean', sans-serif;
 }
 
+.header {
+  margin-bottom: 20px;
+}
+
 .hidden {
   display: none;
 }
@@ -15,7 +19,7 @@ body {
 .back {
   display: flex;
   justify-content: center;
-  background-color:  #EAEDF6;
+  background-color:  #2b2b2b;
 }
 
 .logo {
@@ -38,7 +42,7 @@ div.sighup-to-cont {
 }
 
 header {
-  background: black;
+  background: #2b2b2b;
   color: white;
   height: 60px;
 }

@@ -1,8 +1,18 @@
 import React from 'react';
+import Modal from 'react-modal';
 import ProjectDetailContainer from './project_detail_container';
+import style from './modal-style';
 
 
 class ProjectDetail extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpen: false
+    };
+    this.closeModal = this.closeModal.bind(this);
+    this.openModal = this.openModal.bind(this);
+  }
 
   componentDidMount(){
     this.props.requestSingleProject(this.props.match.params.projectId);
@@ -13,6 +23,14 @@ class ProjectDetail extends React.Component {
      this.props.requestSingleProject(nextProps.match.params.projectId);
    }
  }
+
+  closeModal() {
+    this.setState({ modalOpen: false });
+  }
+
+  openModal() {
+    this.setState({ modalOpen: true });
+  }
 
   render(){
 
@@ -25,10 +43,28 @@ class ProjectDetail extends React.Component {
 
     return (
       <div>
-        <div className="proj-name">{user.username}</div>
-        <div className="proj-title">{project.title}</div>
-        <div className="proj-description">{project.description}</div>
-        <div className="proj-description">{project.image_id}</div>
+        <Modal
+          contentLabel="Modal"
+          isOpen={this.state.modalOpen}
+          onRequestclose={this.closeModal}
+          style={style}>
+
+        <div className="ProjectModal?">
+          <div className="projFrame">
+            <div className="projBox">
+                  <div className="projSidebar">
+                    <div className="userPic"></div>
+                    <div className="proj-name">{user.username}</div>
+                  </div>
+                <div className="projHeader">
+                    <div className="proj-title">{project.title}</div>
+                  </div>
+                    <div className="proj-description">{project.description}</div>
+                    <div className="proj-images">{project.image_id}</div>
+            </div>
+          </div>
+        </div>
+      </Modal>
       </div>
     )
   }
