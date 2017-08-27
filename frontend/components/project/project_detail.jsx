@@ -5,56 +5,20 @@ import style from './modal-style';
 
 
 class ProjectDetail extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modalOpen: false
-    };
-    this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModal.bind(this);
-  }
-
-  componentDidMount(){
-    this.props.requestSingleProject(this.props.match.params.projectId);
-  }
-
-  componentWillReceiveProps(nextProps){
-   if(this.props.match.params.projectId !== nextProps.match.params.projectId){
-     this.props.requestSingleProject(nextProps.match.params.projectId);
-   }
- }
-
-  closeModal() {
-    this.setState({ modalOpen: false });
-  }
-
-  openModal() {
-    this.setState({ modalOpen: true });
-  }
 
   render(){
 
-    const project = this.props.project[0];
-    const user = this.props.user[0];
-
-    if((Object.keys(this.props.project).length === 0) || (project === undefined)){
-      return null;
-    }
-
+    const project = this.props.project;
+    const user = this.props.user;
     return (
       <div>
-        <Modal
-          contentLabel="Modal"
-          isOpen={this.state.modalOpen}
-          onRequestclose={this.closeModal}
-          style={style}>
-
         <div className="ProjectModal?">
           <div className="projFrame">
             <div className="projBox">
                   <div className="projSidebar">
                     <div className="userPic"></div>
                     <div className="proj-name">{user.username}</div>
+                    <div className="proj-userpic">{user.userpic_url }</div>
                   </div>
                 <div className="projHeader">
                     <div className="proj-title">{project.title}</div>
@@ -64,7 +28,6 @@ class ProjectDetail extends React.Component {
             </div>
           </div>
         </div>
-      </Modal>
       </div>
     )
   }

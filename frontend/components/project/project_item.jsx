@@ -4,6 +4,7 @@ import style from './modal-style';
 import { Link } from 'react-router-dom';
 import ProjectIndex from './project_index';
 import ProjectDetailContainer from './project_detail_container';
+import ProjectDetail from './project_detail';
 
 class ProjectItem extends React.Component {
   constructor(props) {
@@ -30,25 +31,23 @@ class ProjectItem extends React.Component {
   }
 
   openModal() {
-    debugger
     this.setState({ modalOpen: true });
   }
 
 
 
   render (){
-      const project = this.props.project;
-      const user = this.props.user;
+      const { user, project } = this.props;
       return (
-        <div>
+        <div className="project-box">
           <div className="card-box">
             <div className ="content-list">
               <div className="project">
+                <section onClick={this.openModal}>
                 <div className="project-pic">
-                  <section onClick={this.openModal}>
-                    <div className="card-pic">{/*   PLACE PICTURE HERE   */}</div>
-                  </section>
+                  <div className="card-pic"></div>
                 </div>
+                </section>
                   <div className="card-text-space">
                     <div className="card-text">
                       <div className="card-title">{project.title}</div>
@@ -57,30 +56,19 @@ class ProjectItem extends React.Component {
                 </div>
               </div>
             </div>
-        </div>
 
         <Modal
           contentLabel="Modal"
           isOpen={this.state.modalOpen}
-          onRequestclose={this.closeModal}
+          onRequestClose={this.closeModal}
           style={style}>
 
-        <div className="ProjectModal?">
-          <div className="projFrame">
-            <div className="projBox">
-                  <div className="projSidebar">
-                    <div className="userPic"></div>
-                    <div className="proj-name">{user.username}</div>
-                  </div>
-                <div className="projHeader">
-                    <div className="proj-title">{project.title}</div>
-                  </div>
-                    <div className="proj-description">{project.description}</div>
-                    <div className="proj-images">{project.image_id}</div>
-            </div>
+          <div className="Modal-box">
+            <ProjectDetail project={project} user={user} />
           </div>
-        </div>
-      </Modal>
+
+        </Modal>
+      </div>
     </div>
       )
 

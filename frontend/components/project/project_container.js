@@ -5,6 +5,7 @@ import { selectAllProjects } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
   return {
+    currentUser: state.session.currentUser,
     projects: selectAllProjects(state),
     users: state.users,
   };
