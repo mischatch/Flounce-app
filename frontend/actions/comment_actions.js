@@ -25,8 +25,8 @@ export const requestComments = projectId => dispatch => {
   .then(comments => dispatch(receiveComments(comments)));
 };
 
-export const deleteComment = (projectId, commentId) => dispatch => {
-  return CommentAPIUtil.deleteComment(projectId, commentId)
+export const deleteComment = (commentId) => dispatch => {
+  return CommentAPIUtil.deleteComment(commentId)
   .then(comment => dispatch(removeComment(comment)));
 };
 

@@ -1,6 +1,7 @@
 class Api::CommentsController < ApplicationController
 
   def index
+
     @comments = Project.find(params[:project_id]).comments
   end
 
