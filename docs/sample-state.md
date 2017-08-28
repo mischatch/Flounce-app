@@ -10,13 +10,13 @@
       id: 1,
       title: 'first project',
       description: 'very first project',
-      userId: 1
+      user_id: 1
     },
     2: {
       id: 2,
       title: 'second project',
       description: 'very second project',
-      userId: 1,
+      user_id: 1,
       image_ids: [1, 2, 3],
     }
   }
@@ -24,8 +24,9 @@
     1: {
       id: 1,
       body: 'Great !',
-      projectId: 1,
-      commentorId: 3
+      project_id: 1,
+      username: 'Martin',
+      user_id: 3
     }
   }
   errors: {

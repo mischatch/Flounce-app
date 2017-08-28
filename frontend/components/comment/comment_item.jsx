@@ -9,7 +9,7 @@ class CommentItem extends React.Component {
   }
 
   deleteCommentButton(comment){
-    if(this.props.currentUser.id === comment.user_id){
+    if(this.props.currentUser && this.props.currentUser.id === comment.user_id){
       return (
         <button onClick={() => this.deleteCommentTrigger(comment.id)}> delete comment </button>
       )
@@ -26,8 +26,8 @@ class CommentItem extends React.Component {
       <div>
         <span>{body}</span>
         <span>{username}</span>
-        {this.deleteCommentButton(this.props.comment)}
-      
+        <span>{this.deleteCommentButton(this.props.comment)}</span>
+
       </div>
     )
   }

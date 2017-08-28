@@ -11,6 +11,7 @@ class CommentForm extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.switcher = this.switcher.bind(this);
   }
 
   handleSubmit(e){
@@ -23,6 +24,7 @@ class CommentForm extends React.Component {
   }
 
   handleInput(e) {
+    e.preventDefault();
     this.setState({
       body: e.currentTarget.value,
       project_id: this.props.projectId,
@@ -30,17 +32,35 @@ class CommentForm extends React.Component {
     });
   }
 
-  render(){
-
-    return (
+  switcher(){
+    if(this.props.currentUser){
+      return(
+        <div className="comment-form">
+          <div>
+            <form className="" onSubmit={ this.handleSubmit }>
+              <textarea
+                className="comment-textarea"
+                id="body"
+                value={ this.state.body }
+                onChange={ this.handleInput } />
+              <br/>
+              <div className="cmnt-btn-box">
+              <button className="post-a-comment">Post a Comment</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )
+    } else {
       <div>
-        <form onSubmit={ this.handleSubmit }>
-          <textarea
-            id="body"
-            value={ this.state.body }
-            onChange={ this.handleInput } />
-          <button>leave comment</button>
-        </form>
+        User must be signed in to add comment!
+      </div>
+    }
+  }
+  render(){
+    return (
+      <div className='comment-box'>
+        {this.switcher()}
       </div>
     );
   }

@@ -40,7 +40,7 @@ class ProjectItem extends React.Component {
   render (){
       const { user, project } = this.props;
       return (
-        <div className="project-box">
+        <div className="project-box-small">
           <div className="card-box">
             <div className ="content-list">
               <div className="project">

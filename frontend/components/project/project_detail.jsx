@@ -6,7 +6,6 @@ import CommentsContainer from '../comment/comment_container';
 
 
 class ProjectDetail extends React.Component {
-
   render(){
     const { project, user, projectId } = this.props;
     return (
@@ -21,16 +20,18 @@ class ProjectDetail extends React.Component {
                     <div className="proj-name">{user.username}</div>
                     <div className="proj-userpic"></div>
                   </div>
-                <div className="projHeader">
-                    <div className="proj-title">{project.title}</div>
-                  </div>
-                    <div className="proj-description">{project.description}</div>
-                    <div className="proj-images">{project.image_id}</div>
+                  <div className="proj-body">
+                    <div className="projHeader">
+                      <div className="proj-title">{project.title}</div>
+                    </div>
+                      <div className="proj-description">{project.description}</div>
+                      <div className="proj-images">{project.image_id}</div>
+                      <div>
+                        <CommentsContainer projectId={projectId}/>
+                      </div>
+                    </div>
             </div>
           </div>
-        </div>
-        <div>
-          <CommentsContainer projectId={projectId}/>
         </div>
       </div>
     )
