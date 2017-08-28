@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import capitalize from 'lodash/capitalize';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -72,13 +73,14 @@ class SessionForm extends React.Component {
   }
 
   render() {
+
     return (
       <div className="back">
       <div className="log-form">
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="signup-to-cont">
-            <p className="signup-to-cont">Sign up to continue</p>
+            <p className="signup-to-cont">{capitalize(this.props.formType)} up to continue</p>
           </div>
           <br/>
             <Link to="/">

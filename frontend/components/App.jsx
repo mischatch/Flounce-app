@@ -24,8 +24,8 @@ const App = () => {
       {/* <ProjectContainer /> */}
       {/* </div> */}
     <Switch>
-      <Route path="/login" component={SessionFormContainer} />
-      <Route path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
       <Route path='/projects/:projectId' component={ProjectDetailContainer} />
       <Route path='/' component={ProjectContainer} />
     </Switch>
