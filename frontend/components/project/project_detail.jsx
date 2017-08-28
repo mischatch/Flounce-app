@@ -27,6 +27,7 @@ class ProjectDetail extends React.Component {
                       <div className="proj-description">{project.description}</div>
                       <div className="proj-images">{project.image_id}</div>
                       <div>
+                        
                         <CommentsContainer projectId={projectId}/>
                       </div>
                     </div>

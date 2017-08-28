@@ -14,8 +14,15 @@ class Comments extends React.Component {
 
 
     return(
-      <div>
-        <div>
+      <div className='test'>
+        <div className="com-box">
+          <div className="comments-title">
+            Comments({comments.length})
+          </div>
+          <CommentFormContainer
+            projectId={this.props.projectId}/>
+        </div>
+        <div className="each-com">
           { comments.map(comment => <CommentItem
                         key={comment.id}
                         comment={comment}
@@ -23,8 +30,6 @@ class Comments extends React.Component {
                         deleteComment={this.props.deleteComment}
                         currentUser={this.props.currentUser}/> )}
         </div>
-        <CommentFormContainer
-          projectId={this.props.projectId}/>
       </div>
     );
   }

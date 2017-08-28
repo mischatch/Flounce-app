@@ -23,10 +23,21 @@ class CommentItem extends React.Component {
   render (){
     const { body, username, commentId } = this.props.comment;
     return (
-      <div>
-        <span>{body}</span>
-        <span>{username}</span>
-        <span>{this.deleteCommentButton(this.props.comment)}</span>
+      <div className="one-comment">
+        <div className="com-pic">
+
+        </div>
+        <div className="com-text">
+          <div className="com-name">
+            {username}
+          </div>
+          <div className="com-body">
+            {body}
+          </div>
+        </div>
+          <div>
+            {this.deleteCommentButton(this.props.comment)}
+          </div>
 
       </div>
     )

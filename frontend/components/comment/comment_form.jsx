@@ -36,7 +36,7 @@ class CommentForm extends React.Component {
     if(this.props.currentUser){
       return(
         <div className="comment-form">
-          <div>
+          <div >
             <form className="" onSubmit={ this.handleSubmit }>
               <textarea
                 className="comment-textarea"
