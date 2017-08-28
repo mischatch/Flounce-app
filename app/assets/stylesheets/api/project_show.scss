@@ -140,7 +140,7 @@ div.comments-title {
 }
 
 div.com-box {
-  height: 229px;
+  min-height: 43px;
   padding-top: 24px;
   border-top: 1px solid #d2d8e3;
   border-bottom: 1px solid #d2d8e3;
@@ -153,6 +153,10 @@ div.test {
 div.each-com {
   display: flex;
   flex-direction: column-reverse;
+}
+
+div.comment-form {
+  height: 175px;
 }
 
 div.one-comment {
@@ -179,6 +183,29 @@ div.com-name {
 }
 
 div.com-body {
+  width: 100%;
   color: #484848;
   line-height: 22px;
+}
+
+div.btn-to-dlt-comnt {
+  display: flex;
+  FLEX-DIRECTION: row-reverse;
+}
+
+img.trsh-bin {
+  width: 30px;
+  background-color: none;
+}
+
+button.bin {
+  background-color: transparent;
+  border: none;
+  margin-right: 30px;
+}
+
+div.bigdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }

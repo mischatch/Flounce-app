@@ -11,7 +11,9 @@ class CommentItem extends React.Component {
   deleteCommentButton(comment){
     if(this.props.currentUser && this.props.currentUser.id === comment.user_id){
       return (
-        <button onClick={() => this.deleteCommentTrigger(comment.id)}> delete comment </button>
+        <button className="bin" onClick={() => this.deleteCommentTrigger(comment.id)}>
+           <img className='trsh-bin' src="https://s3.us-east-2.amazonaws.com/clone-app-dev/trashbin.svg" />
+         </button>
       )
     }
   }
@@ -23,6 +25,7 @@ class CommentItem extends React.Component {
   render (){
     const { body, username, commentId } = this.props.comment;
     return (
+      <div className="bigdiv">
       <div className="one-comment">
         <div className="com-pic">
 
@@ -35,9 +38,13 @@ class CommentItem extends React.Component {
             {body}
           </div>
         </div>
-          <div>
-            {this.deleteCommentButton(this.props.comment)}
-          </div>
+      </div>
+
+      <div className="btn-to-dlt-comnt">
+        <div>
+          {this.deleteCommentButton(this.props.comment)}
+        </div>
+      </div>
 
       </div>
     )

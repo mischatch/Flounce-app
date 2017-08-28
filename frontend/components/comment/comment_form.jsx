@@ -35,8 +35,8 @@ class CommentForm extends React.Component {
   switcher(){
     if(this.props.currentUser){
       return(
-        <div className="comment-form">
-          <div >
+        <div className='comment-box'>
+          <div className="comment-form">
             <form className="" onSubmit={ this.handleSubmit }>
               <textarea
                 className="comment-textarea"
@@ -59,7 +59,7 @@ class CommentForm extends React.Component {
   }
   render(){
     return (
-      <div className='comment-box'>
+      <div >
         {this.switcher()}
       </div>
     );
