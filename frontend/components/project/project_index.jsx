@@ -11,7 +11,7 @@ class ProjectIndex extends React.Component {
   }
 
   render(){
-    const { projects, users, requestSingleProject, currentUser } = this.props;
+    const { projects, users, requestSingleProject, currentUser, requestComments } = this.props;
     if((Object.keys(this.props).length === 0) || (projects === undefined)){
       return null;
     }
@@ -22,7 +22,9 @@ class ProjectIndex extends React.Component {
             { projects.map(project => <ProjectItem
                                         key={project.id}
                                         project={project}
-                                        user={users[project.user_id]} /> )}
+                                        user={users[project.user_id]}
+                                        projectId={project.id}
+                                        requestComments={requestComments}/> )}
 
         </div>
         <Route path="/projects/:projectId" component={ProjectDetailContainer} />

@@ -7,3 +7,8 @@ export const selectAllProjects = state => {
 export const selectUsers = state => {
   return values(state.users);
 };
+
+
+export const selectComments = state => {
+  return values(state.comments);
+};

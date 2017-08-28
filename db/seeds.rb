@@ -24,3 +24,11 @@ pr3 = Project.create!(user_id: c.id, title: 'third project', description: 'proje
 pr4 = Project.create!(user_id: d.id, title: 'fourth project', description: 'project wih a slightly different description created for testing purposes only')
 pr5 = Project.create!(user_id: e.id, title: 'fifth project', description: 'project wih a slightly different description created for testing purposes only')
 pr6 = Project.create!(user_id: f.id, title: 'sixth project', description: 'project wih a slightly different description created for testing purposes only')
+
+
+Comment.delete_all
+
+c1 = Comment.create!(user_id: a.id, project_id: pr1.id, body: 'Really nice work!')
+c1 = Comment.create!(user_id: b.id, project_id: pr1.id, body: 'Cool man!')
+c1 = Comment.create!(user_id: c.id, project_id: pr1.id, body: 'AAAAAAAAAAA!')
+c1 = Comment.create!(user_id: d.id, project_id: pr1.id, body: 'Niiiiiiiiccccceeeee!')

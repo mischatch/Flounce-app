@@ -6,6 +6,7 @@ import ProjectIndex from './project_index';
 import ProjectDetailContainer from './project_detail_container';
 import ProjectDetail from './project_detail';
 
+
 class ProjectItem extends React.Component {
   constructor(props) {
     super(props);
@@ -56,7 +57,6 @@ class ProjectItem extends React.Component {
                 </div>
               </div>
             </div>
-
         <Modal
           contentLabel="Modal"
           isOpen={this.state.modalOpen}
@@ -64,7 +64,7 @@ class ProjectItem extends React.Component {
           style={style}>
 
           <div className="Modal-box">
-            <ProjectDetail project={project} user={user} />
+            <ProjectDetail project={project} user={user} projectId={this.props.project.id} />
           </div>
 
         </Modal>

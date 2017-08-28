@@ -6,7 +6,7 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = curren_user.id
+    # @comment.user_id = current_user.id
     if @comment.save
       render :show
     else
@@ -18,14 +18,14 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment
       @comment.destroy
-      reder json: @comment
+      render json: @comment
     end
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:project_id, :body)
+    params.require(:comment).permit(:project_id, :user_id, :body)
   end
 
 end
