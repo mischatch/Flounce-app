@@ -5,7 +5,6 @@ import { createComment, deleteComment } from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     currentUser: state.session.currentUser,
     prjectId: ownProps.projectId,

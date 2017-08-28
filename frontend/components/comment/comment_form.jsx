@@ -5,7 +5,6 @@ import merge from 'lodash/merge';
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
-      debugger
     this.state = {
       body: '',
     };
@@ -15,18 +14,24 @@ class CommentForm extends React.Component {
   }
 
   handleSubmit(e){
-    debugger
     e.preventDefault();
-    this.props.createComment(projectId, this.state);
+    this.props.createComment(this.props.projectId, this.state).then(() => this.setState({
+      body: '',
+      project_id: this.props.projectId,
+      user_id: this.props.currentUser.id,
+    }));
   }
 
   handleInput(e) {
-    this.setState({ body: e.currentTarget.value });
+    this.setState({
+      body: e.currentTarget.value,
+      project_id: this.props.projectId,
+      user_id: this.props.currentUser.id,
+    });
   }
 
   render(){
 
-    debugger
     return (
       <div>
         <form onSubmit={ this.handleSubmit }>

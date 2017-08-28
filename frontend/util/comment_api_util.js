@@ -5,13 +5,13 @@ export const fetchComments = projectId => (
   })
 );
 
-export const createComment = (projectId, comment) => (
-  $.ajax({
+export const createComment = (projectId, comment) => {
+  return $.ajax({
     method: 'POST',
     url: `api/projects/${projectId}/comments`,
-    data: comment
+    data: { comment }
   })
-);
+};
 
 export const deleteComment = (commentId) => {
   return $.ajax({
