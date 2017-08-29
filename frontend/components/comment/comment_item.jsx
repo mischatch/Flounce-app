@@ -23,12 +23,13 @@ class CommentItem extends React.Component {
   }
 
   render (){
-    const { body, username, commentId } = this.props.comment;
+    debugger
+    const { body, username, commentId, userpic } = this.props.comment;
     return (
       <div className="bigdiv">
       <div className="one-comment">
         <div className="com-pic">
-
+          <img src={userpic} />
         </div>
         <div className="com-text">
           <div className="com-name">
