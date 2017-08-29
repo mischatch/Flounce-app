@@ -90,7 +90,7 @@ div.projHeader {
 }
 
 div.proj-description {
-  margin: 20px 0 0 20px;
+  margin: 20px 0 20px 20px;
 }
 
 div.comment-box {
@@ -208,4 +208,20 @@ div.bigdiv {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+div.image-container {
+  width: inherit;
+}
+
+div.proj-body {
+  width: 100%;
+}
+
+div.proj-images {
+  width: inherit;
+}
+
+img.PRIMG {
+  width: inherit;
 }

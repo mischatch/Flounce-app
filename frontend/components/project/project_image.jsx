@@ -1,10 +1,9 @@
 import React from 'react';
 
 const ProjectIndex = ({ image }) => {
-  debugger
   return (
-    <div>
-      <img src={image} />
+    <div className="image-container">
+      <img className="PRIMG" src={image} />
     </div>
   )
 }
