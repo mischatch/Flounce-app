@@ -15,7 +15,7 @@ class ProjectDetail extends React.Component {
             <div className="projBox">
                   <div className="projSidebar">
                     <div className="userPic">
-                      <img className="pic" src="https://s3.us-east-2.amazonaws.com/clone-app-dev/user_test.png" />
+                      <img className="pic" src={user.userpic} />
                     </div>
                     <div className="proj-name">{user.username}</div>
                     <div className="proj-userpic"></div>
@@ -27,7 +27,7 @@ class ProjectDetail extends React.Component {
                       <div className="proj-description">{project.description}</div>
                       <div className="proj-images">{project.image_id}</div>
                       <div>
-                        
+
                         <CommentsContainer projectId={projectId}/>
                       </div>
                     </div>

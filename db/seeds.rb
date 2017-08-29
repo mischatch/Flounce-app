@@ -9,12 +9,12 @@
 
 User.delete_all
 
-a = User.create!(username: 'Martin', password: "password", email: "mail@mail.com", about: "Just a simple demo User")
-b = User.create!(username: 'John', password: "password", email: "mail@mail.com", about: "Just a second demo User")
-c = User.create!(username: 'Billy', password: "password", email: "mail@mail.com", about: "Just a third demo User")
-d = User.create!(username: 'Sam', password: "password", email: "mail@mail.com", about: "Just a fourth demo User")
-e = User.create!(username: 'Dan', password: "password", email: "mail@mail.com", about: "Just a fifth demo User")
-f = User.create!(username: 'Martin2', password: "password", email: "mail@mail.com", about: "Just a sixth demo User")
+a = User.create!(username: 'Martin', password: "password", email: "mail@mail.com", about: "Just a simple demo User", userpic: File.new("#{Rails.root}/app/assets/images/user_test.png"))
+b = User.create!(username: 'John', password: "password", email: "mail@mail.com", about: "Just a second demo User", userpic: File.new("#{Rails.root}/app/assets/images/user2.jpg"))
+c = User.create!(username: 'Billy', password: "password", email: "mail@mail.com", about: "Just a third demo User", userpic: File.new("#{Rails.root}/app/assets/images/user3.png"))
+d = User.create!(username: 'Sam', password: "password", email: "mail@mail.com", about: "Just a fourth demo User", userpic: File.new("#{Rails.root}/app/assets/images/user4.png"))
+e = User.create!(username: 'Dan', password: "password", email: "mail@mail.com", about: "Just a fifth demo User", userpic: File.new("#{Rails.root}/app/assets/images/user5.png"))
+f = User.create!(username: 'Martin2', password: "password", email: "mail@mail.com", about: "Just a sixth demo User", userpic: File.new("#{Rails.root}/app/assets/images/user6.jpg"))
 
 Project.delete_all
 
