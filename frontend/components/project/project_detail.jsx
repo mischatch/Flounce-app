@@ -9,7 +9,6 @@ import ProjectImage from './project_image';
 class ProjectDetail extends React.Component {
   render(){
     const { project, user, projectId } = this.props;
-    debugger
     return (
       <div>
         <div className="ProjectModal?">

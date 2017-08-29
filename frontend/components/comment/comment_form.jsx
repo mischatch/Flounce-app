@@ -20,6 +20,7 @@ class CommentForm extends React.Component {
       body: '',
       project_id: this.props.projectId,
       user_id: this.props.currentUser.id,
+      userpic_url: this.props.currentUser.userpic_url,
     }));
   }
 
@@ -29,6 +30,7 @@ class CommentForm extends React.Component {
       body: e.currentTarget.value,
       project_id: this.props.projectId,
       user_id: this.props.currentUser.id,
+      userpic_url: this.props.currentUser.userpic_url,
     });
   }
 
