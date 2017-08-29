@@ -38,7 +38,7 @@ class ProjectItem extends React.Component {
 
 
   render (){
-      const { user, project } = this.props;
+      const { user, project, images } = this.props;
       return (
         <div className="project-box-small">
           <div className="card-box">
@@ -46,7 +46,9 @@ class ProjectItem extends React.Component {
               <div className="project">
                 <section onClick={this.openModal}>
                 <div className="project-pic">
-                  <div className="card-pic"></div>
+                  <div className="card-pic">
+                    <img className="imgThumbnail" src={images[0]} />
+                  </div>
                 </div>
                 </section>
                   <div className="card-text-space">

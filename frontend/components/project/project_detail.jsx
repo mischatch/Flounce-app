@@ -3,11 +3,13 @@ import Modal from 'react-modal';
 import ProjectDetailContainer from './project_detail_container';
 import style from './modal-style';
 import CommentsContainer from '../comment/comment_container';
+import ProjectImage from './project_image';
 
 
 class ProjectDetail extends React.Component {
   render(){
     const { project, user, projectId } = this.props;
+    debugger
     return (
       <div>
         <div className="ProjectModal?">
@@ -25,7 +27,11 @@ class ProjectDetail extends React.Component {
                       <div className="proj-title">{project.title}</div>
                     </div>
                       <div className="proj-description">{project.description}</div>
-                      <div className="proj-images">{project.image_id}</div>
+                      <div className="proj-images">
+                        {project.imageUrls.map(image => <ProjectImage
+                                                        key={image.id}
+                                                        image={image} />)}
+                      </div>
                       <div>
 
                         <CommentsContainer projectId={projectId}/>

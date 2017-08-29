@@ -23,7 +23,6 @@ class CommentItem extends React.Component {
   }
 
   render (){
-    debugger
     const { body, username, commentId, userpic } = this.props.comment;
     return (
       <div className="bigdiv">

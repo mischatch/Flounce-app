@@ -1,5 +1,4 @@
 import * as CommentAPIUtil from '../util/comment_api_util';
-import { receiveErrors } from './session_actions';
 
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";

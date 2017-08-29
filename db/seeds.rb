@@ -32,3 +32,13 @@ c1 = Comment.create!(user_id: a.id, project_id: pr1.id, body: 'Really nice work!
 c1 = Comment.create!(user_id: b.id, project_id: pr1.id, body: 'Cool man!')
 c1 = Comment.create!(user_id: c.id, project_id: pr1.id, body: 'AAAAAAAAAAA!')
 c1 = Comment.create!(user_id: d.id, project_id: pr1.id, body: 'Niiiiiiiiccccceeeee!')
+
+Image.delete_all
+
+imgPr1 = Image.create!(project_id: pr1.id, image: File.new("#{Rails.root}/app/assets/images/project1/01.jpg"))
+imgPr1 = Image.create!(project_id: pr1.id, image: File.new("#{Rails.root}/app/assets/images/project1/02.jpg"))
+imgPr1 = Image.create!(project_id: pr1.id, image: File.new("#{Rails.root}/app/assets/images/project1/03.jpg"))
+imgPr1 = Image.create!(project_id: pr1.id, image: File.new("#{Rails.root}/app/assets/images/project1/04.jpg"))
+imgPr1 = Image.create!(project_id: pr1.id, image: File.new("#{Rails.root}/app/assets/images/project1/05.jpg"))
+imgPr1 = Image.create!(project_id: pr1.id, image: File.new("#{Rails.root}/app/assets/images/project1/06.jpg"))
+imgPr1 = Image.create!(project_id: pr1.id, image: File.new("#{Rails.root}/app/assets/images/project1/07.jpg"))

@@ -4,6 +4,7 @@ import ProjectDetail from './project_detail';
 import { requestSingleProject } from '../../actions/project_actions';
 
 const mapStateToProps = ({ projects, users }) => {
+  debugger
   return {
     project: values(projects),
     user: values(users),

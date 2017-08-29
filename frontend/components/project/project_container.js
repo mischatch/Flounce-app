@@ -19,7 +19,8 @@ const mapDispatchToProps = dispatch => {
 
   return {
     requestAllProjects: () => dispatch(requestAllProjects()),
-    requestComments: () => dispatch(requestComments())
+    requestComments: () => dispatch(requestComments()),
+    requestImages: () => dispatch(requestImages())
   };
 };
 

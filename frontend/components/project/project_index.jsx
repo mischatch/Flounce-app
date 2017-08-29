@@ -24,7 +24,8 @@ class ProjectIndex extends React.Component {
                                         project={project}
                                         user={users[project.user_id]}
                                         projectId={project.id}
-                                        requestComments={requestComments} /> )}
+                                        requestComments={requestComments}
+                                        images={project.imageUrls} /> )}
         </div>
         <Route path="/projects/:projectId" component={ProjectDetailContainer} />
       </div>
