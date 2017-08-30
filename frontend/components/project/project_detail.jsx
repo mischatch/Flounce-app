@@ -41,7 +41,7 @@ class ProjectDetail extends React.Component {
     if(this.props.currentUser){
       return (
         <div className="sb-apr-btn-cont">
-          <button className={this.buttonName().replace(/ /g,"_")} onClick={this.likeSwitcher} >{this.buttonName()}</button>
+          <button id="appr-bttn" className={this.buttonName().replace(/ /g,"_")} onClick={this.likeSwitcher} >{this.buttonName()}</button>
         </div> );
     }
   }
@@ -53,12 +53,19 @@ class ProjectDetail extends React.Component {
         <div className="ProjectModal?">
           <div className="projFrame">
             <div className="projBox">
-                  <div className="projSidebar">
+              <div className="proj-body">
+                  <div id="side" className="projSidebar">
                     <div className="userPic">
                       <img className="pic" src={user.userpic} />
                     </div>
                     <div className="proj-name">{user.username}</div>
                     <div className="proj-userpic"></div>
+                      <div className="proj-title-cover">
+                        <div className="proj-title">{project.title}</div>
+                      </div>
+                      <div className="proj-description">
+                        <div className="description">{project.description}</div>
+                      </div>
                     {/*                  likes number                   */}
                     <div className="num-likes">
                       <img src="https://s3.us-east-2.amazonaws.com/clone-app-dev/like_icon.svg" />
@@ -67,11 +74,8 @@ class ProjectDetail extends React.Component {
                     {/*                 APPRECIATE BUTTON                 */}
                     {this.renderOrNot()}
                   </div>
-                  <div className="proj-body">
-                    <div className="projHeader">
-                      <div className="proj-title">{project.title}</div>
-                    </div>
-                      <div className="proj-description">{project.description}</div>
+
+
                       <div className="proj-images">
                         {project.imageUrls.map((image, idx) => <ProjectImage
                                                         key={idx}

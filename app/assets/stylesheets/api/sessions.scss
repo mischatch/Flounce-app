@@ -5,7 +5,10 @@
 
 body {
   background-color: #EAEDF6;
-  font-family: 'adobe-clean', sans-serif;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .header {

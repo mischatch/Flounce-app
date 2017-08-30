@@ -40,11 +40,16 @@ class CommentForm extends React.Component {
         <div className='comment-box'>
           <div className="comment-form">
             <form className="" onSubmit={ this.handleSubmit }>
+              <div className="form-pic">
+              <div className="future-comment-userpic">
+                <img src={this.props.currentUser.userpic_url} />
+              </div>
               <textarea
                 className="comment-textarea"
                 id="body"
                 value={ this.state.body }
                 onChange={ this.handleInput } />
+            </div>
               <br/>
               <div className="cmnt-btn-box">
               <button className="post-a-comment">Post a Comment</button>
@@ -54,7 +59,7 @@ class CommentForm extends React.Component {
         </div>
       )
     } else {
-      return (<div>
+      return (<div className="comment-alert">
         User must be signed in to add comment!
       </div>);
     }
