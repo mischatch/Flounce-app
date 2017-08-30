@@ -12,3 +12,8 @@ export const selectUsers = state => {
 export const selectComments = state => {
   return values(state.comments);
 };
+
+
+export const selectLikes = state => {
+  return values(state.likes);
+};

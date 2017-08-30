@@ -6,10 +6,9 @@ export const createLike = (like) => (
   })
 );
 
-export const destroyLike = (likeId) => {
-    debugger
+export const destroyLike = (projectId) => {
     return $.ajax({
-    mathod: 'DELETE',
-    url: `api/likes/${likeId}`,
+    method: 'DELETE',
+    url: `api/likes/${projectId}`,
   })
 };

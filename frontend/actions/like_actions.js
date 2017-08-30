@@ -21,7 +21,6 @@ export const createLike = (like) => dispatch => {
 
 
 export const unlikeProject = (like) => dispatch => {
-  debugger
   return LikeAPIUtil.destroyLike(like)
   .then(like => dispatch(deleteLike(like)));
 };

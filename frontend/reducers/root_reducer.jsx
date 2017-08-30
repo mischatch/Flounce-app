@@ -4,6 +4,7 @@ import projectsReducer from './projects_reducer';
 import usersReducer from './users_reducer';
 import commentsReducer from './comments_reducer';
 import imagesReducer from './images_reducer';
+import likesReducer from './likes_reducer';
 
 const RootReducer = combineReducers({
 
@@ -12,6 +13,7 @@ const RootReducer = combineReducers({
   users: usersReducer,
   comments: commentsReducer,
   images: imagesReducer,
+  likes: likesReducer
 });
 
 export default RootReducer;

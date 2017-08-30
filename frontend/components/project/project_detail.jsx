@@ -16,7 +16,7 @@ class ProjectDetail extends React.Component {
   }
 
   buttonName(){
-    if(!this.props.project.likes[this.props.currentUser.id]){
+    if(this.props.project.liker_ids === null || !this.props.project.liker_ids.includes(this.props.currentUser.id)){
       return 'Appreciate Project';
     } else {
       return 'Thank You';
@@ -25,14 +25,14 @@ class ProjectDetail extends React.Component {
 
   likeSwitcher(e){
     e.preventDefault();
-    const likes = this.props.project.likes;
+
     const like = {user_id: this.props.currentUser.id,
                 project_id: this.props.projectId };
-    if(!this.props.project.likes[this.props.currentUser.id]){
+    if(this.props.project.liker_ids === null || !this.props.project.liker_ids.includes(this.props.currentUser.id)){
       this.props.createLike(like);
     } else {
-      debugger
-      this.props.unlikeProject(this.props.currentUser.id);
+
+      this.props.unlikeProject(this.props.projectId);
       // this.props.unlikeProject(likes[this.props.currentUser.id].id);
     }
   }
@@ -56,6 +56,8 @@ class ProjectDetail extends React.Component {
                     </div>
                     <div className="proj-name">{user.username}</div>
                     <div className="proj-userpic"></div>
+                    {/* likes number */}
+                    num likes {this.props.project.liker_ids.length}
                     {/*                 APPRECIATE BUTTON                 */}
                     {this.renderOrNot()}
                   </div>
