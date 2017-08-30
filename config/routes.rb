@@ -8,8 +8,11 @@ Rails.application.routes.draw do
       resources :comments, only: [:index, :create]
       resources :images, only: [:index, :show]
     end
+    resources :likes, only: [:create, :destroy]
     resources :comments, only: [:destroy]
   end
+
+  # delete '/api/likes', :to => 'api/likes#destroy'
 
   root "static_pages#root"
 end

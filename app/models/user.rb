@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :userpic, content_type: /\Aimage\/.*\Z/
 
   has_many :projects
+  has_many :likes, dependent: :destroy
 
   after_initialize :ensure_session_token
 

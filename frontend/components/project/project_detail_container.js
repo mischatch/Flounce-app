@@ -1,19 +1,24 @@
 import values from 'lodash/values';
 import { connect } from 'react-redux';
 import ProjectDetail from './project_detail';
-import { requestSingleProject } from '../../actions/project_actions';
+import { createLike, unlikeProject } from '../../actions/like_actions';
 
-const mapStateToProps = ({ projects, users }) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    project: values(projects),
-    user: values(users),
+    currentUser: state.session.currentUser,
+    project: ownProps.project,
+    user: ownProps.user,
+    projectId: ownProps.projectId,
+
   };
 };
 
 
 const mapDispatchToProps = dispatch => {
+  debugger
   return {
-    requestSingleProject: (id) => dispatch(requestSingleProject(id))
+    createLike: (like) => dispatch(createLike(like)),
+    unlikeProject: (id) => dispatch(unlikeProject(id)),
   };
 };
 

@@ -7,8 +7,44 @@ import ProjectImage from './project_image';
 
 
 class ProjectDetail extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.buttonName = this.buttonName.bind(this);
+    this.likeSwitcher = this.likeSwitcher.bind(this);
+    this.renderOrNot = this.renderOrNot.bind(this);
+  }
+
+  buttonName(){
+    if(!this.props.project.likes[this.props.currentUser.id]){
+      return 'Appreciate Project';
+    } else {
+      return 'Thank You';
+    }
+  }
+
+  likeSwitcher(e){
+    e.preventDefault();
+    const likes = this.props.project.likes;
+    const like = {user_id: this.props.currentUser.id,
+                project_id: this.props.projectId };
+    if(!this.props.project.likes[this.props.currentUser.id]){
+      this.props.createLike(like);
+    } else {
+      debugger
+      this.props.unlikeProject(this.props.currentUser.id);
+      // this.props.unlikeProject(likes[this.props.currentUser.id].id);
+    }
+  }
+
+  renderOrNot(){
+    if(this.props.currentUser){
+      return (<button className={this.buttonName()} onClick={this.likeSwitcher} >{this.buttonName()}</button>);
+    }
+  }
+
   render(){
-    const { project, user, projectId } = this.props;
+    const { project, user, projectId, currentUser } = this.props;
     return (
       <div>
         <div className="ProjectModal?">
@@ -20,6 +56,8 @@ class ProjectDetail extends React.Component {
                     </div>
                     <div className="proj-name">{user.username}</div>
                     <div className="proj-userpic"></div>
+                    {/*                 APPRECIATE BUTTON                 */}
+                    {this.renderOrNot()}
                   </div>
                   <div className="proj-body">
                     <div className="projHeader">
@@ -27,8 +65,8 @@ class ProjectDetail extends React.Component {
                     </div>
                       <div className="proj-description">{project.description}</div>
                       <div className="proj-images">
-                        {project.imageUrls.map(image => <ProjectImage
-                                                        key={image.id}
+                        {project.imageUrls.map((image, idx) => <ProjectImage
+                                                        key={idx}
                                                         image={image} />)}
                       </div>
                       <div>

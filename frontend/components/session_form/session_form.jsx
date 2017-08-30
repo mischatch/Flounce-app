@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="signup-to-cont">
-            <p className="signup-to-cont">{capitalize(this.props.formType)} up to continue</p>
+            <p className="signup-to-cont">{capitalize(this.props.formType)} to continue</p>
           </div>
           <br/>
             <Link to="/">

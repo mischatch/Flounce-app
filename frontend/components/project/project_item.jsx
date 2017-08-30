@@ -66,7 +66,10 @@ class ProjectItem extends React.Component {
           style={style}>
 
           <div className="Modal-box">
-            <ProjectDetail project={project} user={user} projectId={this.props.project.id} />
+            <ProjectDetailContainer
+                    project={project}
+                    user={user}
+                    projectId={this.props.project.id} />
           </div>
 
         </Modal>

@@ -20,12 +20,13 @@ class ProjectIndex extends React.Component {
         <div className="content-box">
 
             { projects.map(project => <ProjectItem
-                                        key={project.id}
-                                        project={project}
-                                        user={users[project.user_id]}
-                                        projectId={project.id}
-                                        requestComments={requestComments}
-                                        images={project.imageUrls} /> )}
+                                  key={project.id}
+                                  project={project}
+                                  user={users[project.user_id]}
+                                  projectId={project.id}
+                                  requestComments={requestComments}
+                                  images={project.imageUrls}
+                                  currentUser={this.props.currentUser}/> )}
         </div>
         <Route path="/projects/:projectId" component={ProjectDetailContainer} />
       </div>
