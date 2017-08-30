@@ -225,3 +225,43 @@ div.proj-images {
 img.PRIMG {
   width: inherit;
 }
+
+div.num-likes {
+  height: 10px;
+  margin: 10px 0 15px 0px;
+}
+
+div.num-likes > img {
+  height: inherit;
+}
+
+  button.Appreciate_Project {
+  background-color: blue;
+  color: white;
+  height: 35px;
+  width: 90%;
+  border-radius: 50px;
+  font-size: 1.2vw;
+  border: none;
+  margin: 10px 0px 10px 0;
+}
+
+button.Thank_You {
+background-color: white;
+color: grey;
+height: 35px;
+width: 90%;
+border-radius: 50px;
+font-size: 1.2vw;
+border: 1px solid lightgrey;
+margin: 10px 0px 10px 0;
+transition: filter 500ms ease-in-out;
+}
+
+button.Thank_You:hover {
+  filter: brightness(90%);
+}
+div.sb-apr-btn-cont {
+  display: flex;
+  justify-content: center;
+}

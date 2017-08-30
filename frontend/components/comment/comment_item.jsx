@@ -32,7 +32,7 @@ class CommentItem extends React.Component {
         </div>
         <div className="com-text">
           <div className="com-name">
-            {username}
+            {username} 
           </div>
           <div className="com-body">
             {body}

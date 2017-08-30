@@ -54,9 +54,9 @@ class CommentForm extends React.Component {
         </div>
       )
     } else {
-      <div>
+      return (<div>
         User must be signed in to add comment!
-      </div>
+      </div>);
     }
   }
   render(){

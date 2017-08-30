@@ -39,7 +39,10 @@ class ProjectDetail extends React.Component {
 
   renderOrNot(){
     if(this.props.currentUser){
-      return (<button className={this.buttonName()} onClick={this.likeSwitcher} >{this.buttonName()}</button>);
+      return (
+        <div className="sb-apr-btn-cont">
+          <button className={this.buttonName().replace(/ /g,"_")} onClick={this.likeSwitcher} >{this.buttonName()}</button>
+        </div> );
     }
   }
 
@@ -56,8 +59,11 @@ class ProjectDetail extends React.Component {
                     </div>
                     <div className="proj-name">{user.username}</div>
                     <div className="proj-userpic"></div>
-                    {/* likes number */}
-                    num likes {this.props.project.liker_ids.length}
+                    {/*                  likes number                   */}
+                    <div className="num-likes">
+                      <img src="https://s3.us-east-2.amazonaws.com/clone-app-dev/like_icon.svg" />
+                      {this.props.project.liker_ids.length}
+                    </div>
                     {/*                 APPRECIATE BUTTON                 */}
                     {this.renderOrNot()}
                   </div>
