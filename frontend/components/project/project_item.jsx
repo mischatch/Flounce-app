@@ -56,6 +56,10 @@ class ProjectItem extends React.Component {
                       <div className="card-title">{project.title}</div>
                       <div className="card-name">{user.username}</div>
                     </div>
+                    <div className="card-likes-cmnts">
+                      <img className='smallLike' src='https://s3.us-east-2.amazonaws.com/clone-app-dev/like_icon.svg' />
+                      {project.liker_ids.length}
+                    </div>
                 </div>
               </div>
             </div>

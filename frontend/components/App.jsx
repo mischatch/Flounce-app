@@ -17,6 +17,7 @@ const App = () => {
     <header className={headerClass}>
       <div className="globe">
         <GreetingContainer />
+        
       </div>
     </header>
       {/* <div className={headerClass}> */}

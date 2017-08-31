@@ -12,7 +12,9 @@ body::-webkit-scrollbar {
 }
 
 .header {
-
+  position: fixed;
+  width: 100%;
+  z-index: 4;
 }
 
 .hidden {
@@ -27,7 +29,7 @@ body::-webkit-scrollbar {
 
 .logo {
   height: 60px;
-  padding-left: 20px;
+  padding-left: 40px;
   float: left;
 }
 
@@ -117,7 +119,7 @@ div.buttons {
 }
 
 .signup-cont {
-  margin-right: 25px;
+  margin-right: 40px;
 }
 
 .signUp-btn {
@@ -149,7 +151,7 @@ div.buttons {
   color: #a4a4a4;
   border: none;
   // margin-right: 16px;
-  margin-left: 42px;
+  margin-left: 27px;
   font-weight: 600;
 }
 .header-button:hover {
