@@ -203,11 +203,20 @@ div.comments-title {
 }
 
 div.comment-alert {
-  margin: 13px 0 20px 75px;
+  margin: 0px 0 20px 20px;
   color: #fb7983;
-  font-size: 13px;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 100;
+  font-weight: 200;
+}
+
+div.coment-alert-cont {
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
+  height: 40px;
+  background-color: white;
 }
 
 div.com-box {
@@ -333,7 +342,7 @@ color: grey;
 height: 33px;
 width: 90%;
 border-radius: 50px;
-font-size: 1.3vw;
+font-size: 13px;
 border: 1px solid lightgrey;
 margin: 10px 0px 10px 0;
 transition: filter 500ms ease-in-out;

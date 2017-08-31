@@ -15,10 +15,9 @@ const App = () => {
   return (
   <div>
     <header className={headerClass}>
-      <Link to='/' >
-      <img src={ window.staticImages.logo12 }  alt="logo" className="logo" />
-      </Link>
-      <GreetingContainer />
+      <div className="globe">
+        <GreetingContainer />
+      </div>
     </header>
       {/* <div className={headerClass}> */}
       {/* <ProjectContainer /> */}
