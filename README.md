@@ -72,8 +72,8 @@ render (){
 ## Comments and Appreciations
 
 * Logged in users can:
-** Leave comments under projects
-** Appreciate the project(or depreciate)
+* Leave comments under projects
+* Appreciate the project(or depreciate)
 
 ![comments and Appreciations](https://s3.us-east-2.amazonaws.com/clone-app-dev/comment_appr.png)
 
@@ -85,14 +85,14 @@ render (){
 
 ## Technologies
 * Backend
-  ** Ruby On Rails
-  ** jBuilder
-  ** PostgreSQL RDBMS
+  * Ruby On Rails
+  * jBuilder
+  * PostgreSQL RDBMS
 
 * Frontend
-  ** React/Redux
-  ** JavaScript
-  ** SCSS/CSS
+  * React/Redux
+  * JavaScript
+  * SCSS/CSS
 
 ## Storage
  * aws.amazon for storing pictures, such as user profile pictures and project pictures.
