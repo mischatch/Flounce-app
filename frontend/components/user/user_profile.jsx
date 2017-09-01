@@ -9,7 +9,6 @@ class UserProfile extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    debugger
     if (this.props.match.params.userId !== nextProps.match.params.userId){
      this.props.fetchUser(nextProps.match.params.userId);
    }
@@ -17,7 +16,7 @@ class UserProfile extends React.Component {
 
 
   render() {
-
+    debugger
     if(this.props.user === undefined){
       return null;
     }
@@ -32,6 +31,9 @@ class UserProfile extends React.Component {
               </div>
               <div className="Podpis">
               {user.username}
+            </div>
+            <div className="PodpisAbout">
+              {user.about}
             </div>
             </div>
             <div className="profile-body">

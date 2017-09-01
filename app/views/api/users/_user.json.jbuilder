@@ -1,4 +1,4 @@
-json.extract!(user, :id, :username)
+json.extract!(user, :id, :username, :about)
 
 json.userpic_url asset_path(user.userpic.url)
 

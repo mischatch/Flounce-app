@@ -4,6 +4,11 @@ import ProjectItem from '../project/project_item';
 
 class UserProject extends React.Component {
 
+  componentDidMount(){
+    this.props.fetchUser(this.props.match.params.userId);
+    this.props.requestAllProjects();
+  }
+
 
   componentWillReceiveProps(nextProps){
     if (this.props.match.params.userId !== nextProps.match.params.userId){
@@ -14,8 +19,9 @@ class UserProject extends React.Component {
 
 
   render() {
-    debugger
     if(this.props.user.projects === undefined || this.props.user.projects.length === 0){
+      return null;
+    } else if (Object.keys(this.props.allProjects).length === 0){
       return null;
     }
     const { allProjects, projects, user } = this.props;

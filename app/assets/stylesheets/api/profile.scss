@@ -48,7 +48,10 @@ div.profileUP {
 }
 
 div.profile-body-content-box {
-  padding: 20px;
+  padding: 20px 10px 0px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 div.Podpis {
@@ -56,4 +59,11 @@ div.Podpis {
   font-size: 24px;
   font-weight: 600;
   color: #464956;
+}
+
+div.PodpisAbout {
+  margin: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #717788;
 }
