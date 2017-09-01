@@ -1,6 +1,7 @@
 import React from 'react';
 import Comments from './comments';
 import CommentContainer from './comment_container';
+import { Link } from 'react-router-dom';
 
 
 class CommentItem extends React.Component {
@@ -23,16 +24,21 @@ class CommentItem extends React.Component {
   }
 
   render (){
-    const { body, username, commentId, userpic } = this.props.comment;
+    debugger
+    const { body, username, commentId, userpic, user_id } = this.props.comment;
     return (
       <div className="bigdiv">
       <div className="one-comment">
+        <Link to={`/users/${user_id}`} >
         <div className="com-pic">
-          <img src={userpic} />
+              <img src={userpic} />
         </div>
+      </Link>
         <div className="com-text">
           <div className="com-name">
+            <Link to={`/users/${user_id}`} className="UserLink">
             {username}
+          </Link>
           </div>
           <div className="com-body">
             {body}

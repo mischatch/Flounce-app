@@ -42,9 +42,11 @@ const personalGreeting = (currentUser, logout) => {
         { currentUser.username }
       </Link>
       </h2>
+      <Link to={`/users/${currentUser.id}`}>
       <div className="headerUP">
         <img className="headerUPimage" src={currentUser.userpic_url} />
       </div>
+    </Link>
     </div>
   </div>
 )};

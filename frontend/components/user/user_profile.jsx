@@ -16,7 +16,6 @@ class UserProfile extends React.Component {
 
 
   render() {
-    debugger
     if(this.props.user === undefined){
       return null;
     }
