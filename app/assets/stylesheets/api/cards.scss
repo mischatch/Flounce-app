@@ -125,3 +125,21 @@ img.smallCommenticon {
   padding-right: 5px;
   padding-left: 10px;
 }
+
+div.ADBOX {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background: url(https://s3.us-east-2.amazonaws.com/clone-app-dev/ad.jpg);
+}
+
+div.ADTEXTBOX {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 50px;
+  margin-left: 90px;
+  margin-right: 90px;
+}

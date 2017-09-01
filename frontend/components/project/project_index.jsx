@@ -21,6 +21,10 @@ class ProjectIndex extends React.Component {
     }
     return (
       <div className="border-box">
+        <div className="ADBOX">
+
+          <div className="ADTEXTBOX">Showcase & Discover Creative Work</div>
+          </div>
         <div className="content-box">
 
             { projects.map(project => <ProjectItem
