@@ -1,66 +1,112 @@
-# Clone Project Proposal
+# Flounce app
 
-[Heroku link][heroku]
+[Flounce app live][heroku]
 
-[Trello link][trello]
+[heroku]: https://flounce-app.herokuapp.com/#/
 
-[heroku]: http://www.clone.herokuapp.com
-[trello]: https://trello.com/b/ALgfuX0Q/clone
+Flounce app is a full-stack web application inspired by Behance. I uses Ruby on Rails on the backend, with a PostgreSQL as it's database and React.js with a Redux framework on the frontend.
 
-## Minimum Viable Product
+# Features & Implementation
 
-Clone is a portfolio showcase web application inspired by Behance.net built with Ruby on Rails and React/Redux. All MVP features will have smooth, bug-free navigation, adequate seed data and stylish CSS:
+## User Authentication
 
-1. Hosting on Heroku
-2. Production README.md
-3. Account Management with Demo option
-4. Explore All Portfolios
-5. Portfolio Viewing
-6. Appreciations(likes)
-7. Comments
+* Frontend and backend user authentication encrypts user password with a BCrypt hashing function, creating a unique session token for each user on sign up or login.
 
-## Design Docs
-* [View Wireframes]([wireframes])
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+* Predefined guest user account allows visitors to test features of the app without necessity to sign up.
 
-[wireframes]: (./wireframes)
-[components]: (./component-hierarchy.md)
-[sample-state]: (./sample-state.md)
-[api-endpoints]: (./api-endpoints.md)
-[schema]: (./schema.md)
+![session](https://s3.us-east-2.amazonaws.com/clone-app-dev/auth.png)
 
+## Modals
 
-## Implementation Timeline
+* Were used to implement project views on user profile page as well as on index page.
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+```javascript
+render (){
+    const { user, project, images } = this.props;
+    return (
+      <div className="project-box-small">
+        <div className="card-box">
+          <div className ="content-list">
+            <div className="project">
+              <section onClick={this.openModal}>
+              <div className="project-pic">
+                <div className="card-pic">
+                  <img className="imgThumbnail" src={images[0]} />
+                </div>
+              </div>
+              </section>
+                <div className="card-text-space">
+                  <div className="card-text">
+                    <div className="card-title">{project.title}</div>
+                    <Link to={`/users/${user.id}`}>
+                    <div className="card-name">{user.username}</div>
+                    </Link>
+                  </div>
+                  <div className="card-likes-cmnts">
+                    <img className='smallLike' src='https://s3.us-east-2.amazonaws.com/clone-app-dev/like_icon.svg' />
+                    {project.liker_ids.length}
+                    <img className='smallCommenticon' src='https://s3.us-east-2.amazonaws.com/clone-app-dev/noun_974856_cc.svg' />
+                    {project.comment_num}
+                  </div>
+              </div>
+            </div>
+          </div>
+      <Modal
+        contentLabel="Modal"
+        isOpen={this.state.modalOpen}
+        onRequestClose={this.closeModal}
+        style={style}>
+        <div className="Modal-box">
+          <ProjectDetailContainer
+                  project={project}
+                  user={user}
+                  projectId={this.props.project.id} />
+        </div>
+      </Modal>
+    </div>
+  </div>
+    )
+}
+```
 
-**Objective:** Functioning rails project with front-end Authentication
+## Comments and Appreciations
 
-### Phase 2: Project Model, API, and components (2 days)
+* Logged in users can:
+** Leave comments under projects
+** Appreciate the project(or depreciate)
 
-**Objective:** User can have a porfolio consists of many projects, which can be viewed.
+![comments and Appreciations](https://s3.us-east-2.amazonaws.com/clone-app-dev/comment_appr.png)
 
-### Phase 3: Project content (2 days)
+## User Profile page
 
-**Objective:** Each project has title, description and images. Project show page displays all it's content.
+* Shows user information(User image, username, about) and users projects.
 
-### Phase 4: User profile (1 day)
+![user show page](https://s3.us-east-2.amazonaws.com/clone-app-dev/user_profile.png)
 
-**Objective:** Each user has a profile which showcases their projects.
+## Technologies
+* Backend
+  ** Ruby On Rails
+  ** jBuilder
+  ** PostgreSQL RDBMS
 
-### Phase 5: Project appreciations(likes) (1 day, W2 Th 6pm)
+* Frontend
+  ** React/Redux
+  ** JavaScript
+  ** SCSS/CSS
 
-**Objective:** Users can appreciate projects.
+## Storage
+ * aws.amazon for storing pictures, such as user profile pictures and project pictures.
 
-### Phase 6: - Project comments (1 day, W2 F 6pm)
+# Future features
 
-**Objective:** User can leave a comment under the project. Seen on project show page.
+## User create
+  User create page with ability to change information and upload custom avatar.
 
-### Bonus Features (TBD)
-- [ ] Follows(users can follow each other)
-- [ ] Ability to set tags on a project
-- [ ] Project creating/editing
-- [ ] Project views(number showing project was viewed)
+## Project create
+  Ability to create project.
+
+## Project tags
+  Ability to add a tag to any project and be able to search by tag along all the projects.
+
+## User Follows
+  Ability to follow any user with a feed page.
