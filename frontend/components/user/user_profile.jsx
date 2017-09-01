@@ -1,12 +1,19 @@
 import React from 'react';
 import UserProfileContainer from './user_profile_container';
-import UserProjectContainer from './User_project_container';
+import UserProjectContainer from './user_project_container';
 
 class UserProfile extends React.Component {
 
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
   }
+
+  componentWillReceiveProps(nextProps){
+    debugger
+    if (this.props.match.params.userId !== nextProps.match.params.userId){
+     this.props.fetchUser(nextProps.match.params.userId);
+   }
+ }
 
 
   render() {
@@ -15,7 +22,6 @@ class UserProfile extends React.Component {
       return null;
     }
     const { user } = this.props;
-    debugger
     return (
       <div className="profileCanvas">
         <div className="profileFrame">
@@ -24,6 +30,9 @@ class UserProfile extends React.Component {
               <div className="profileUP">
                 <img className="profileUPimg" src={user.userpic} />
               </div>
+              <div className="Podpis">
+              {user.username}
+            </div>
             </div>
             <div className="profile-body">
             <UserProjectContainer

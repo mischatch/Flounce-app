@@ -8,13 +8,14 @@ div.profileCanvas {
 div.profileFrame {
   display: grid;
   height: 100%;
+  background-color: transparent;
 }
 
 
 
 div.profileBox {
   display: flex;
-  background-color: #fafafa;
+  background-color: transparent;
   margin-left: 5%;
   margin-top: 40px;
 }
@@ -22,15 +23,15 @@ div.profileBox {
 
 div.profileSidebar {
   width: 400px;
-  height: 600px;
+  height: 100%;
   border: 1px solid #E8E8E8;
-  background-color: #d5d7e0;
+  background-color: #ffffff;
 }
 
 div.profile-body {
   width: 100%;
   height: 100%;
-  background-color: #d5d7e0;
+  background-color: #ffffff;
   border: 1px solid #E8E8E8;
 }
 
@@ -38,4 +39,21 @@ img.profileUPimg {
   width: 180px;
   border-radius: 50%;
   height: 180px;
+}
+
+
+div.profileUP {
+  text-align: center;
+  padding: 20px;
+}
+
+div.profile-body-content-box {
+  padding: 20px;
+}
+
+div.Podpis {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #464956;
 }

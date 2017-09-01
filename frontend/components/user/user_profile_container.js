@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
 import UserProfile from './user_profile';
 import { withRouter } from 'react-router';
-// import { requestComments } from '../../actions/comment_actions';
+import { requestAllProjects } from '../../actions/project_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
@@ -15,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchUser: userId => dispatch(fetchUser(userId)),
-  // requestComments: () => dispatch(requestComments()),
+  requestAllProjects: () => dispatch(requestAllProjects()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserProfile));

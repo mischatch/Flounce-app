@@ -3,21 +3,26 @@ import UserProjectContainer from './User_project_container';
 import ProjectItem from '../project/project_item';
 
 class UserProject extends React.Component {
-  // componentDidMount(){
-  //   debugger
-  //   this.props.fetchUser(this.props.user.id);
-  // }
+
+
+  componentWillReceiveProps(nextProps){
+    if (this.props.match.params.userId !== nextProps.match.params.userId){
+     this.props.fetchUser(nextProps.match.params.userId);
+     this.props.requestAllProjects();
+   }
+ }
+
 
   render() {
+    debugger
     if(this.props.user.projects === undefined || this.props.user.projects.length === 0){
       return null;
     }
-    debugger
     const { allProjects, projects, user } = this.props;
     return (
       <div>
-        <div className="border-box">
-          <div className="content-box">
+        <div className="profile-body-box">
+          <div className="profile-body-content-box">
             {/*   __________      MODAL  __________            __________*/}
 
 

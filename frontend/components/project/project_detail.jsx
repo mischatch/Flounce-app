@@ -59,7 +59,7 @@ class ProjectDetail extends React.Component {
                       <img className="pic" src={user.userpic} />
                     </div>
                     <div className="proj-name">
-                        <Link to={`/users/${user.id}`}>
+                        <Link to={`/users/${user.id}`} className="UserLink">
                           {user.username}
                         </Link>
                     </div>
