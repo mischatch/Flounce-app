@@ -1,5 +1,5 @@
 import React from 'react';
-import UserProjectContainer from './User_project_container';
+import UserProjectContainer from './user_project_container';
 import ProjectItem from '../project/project_item';
 
 class UserProject extends React.Component {
