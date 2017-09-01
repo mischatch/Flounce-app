@@ -5,7 +5,8 @@ const style = {
       left              : 0,
       right             : 0,
       bottom            : 0,
-      backgroundColor   : 'rgba(5, 11, 21, 0.75)'
+      backgroundColor   : 'rgba(5, 11, 21, 0.75)',
+      zIndex            : 999
     },
     content : {
       position                   : 'absolute',
@@ -20,7 +21,6 @@ const style = {
       backgroundColor            : 'transparent',
       border                     : 'none',
       padding                    : '0'
-
     }
   };
 

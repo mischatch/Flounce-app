@@ -4,7 +4,7 @@ import ProjectDetailContainer from './project_detail_container';
 import style from './modal-style';
 import CommentsContainer from '../comment/comment_container';
 import ProjectImage from './project_image';
-
+import { Link } from 'react-router-dom';
 
 class ProjectDetail extends React.Component {
 
@@ -58,7 +58,11 @@ class ProjectDetail extends React.Component {
                     <div className="userPic">
                       <img className="pic" src={user.userpic} />
                     </div>
-                    <div className="proj-name">{user.username}</div>
+                    <div className="proj-name">
+                        <Link to={`/users/${user.id}`}>
+                          {user.username}
+                        </Link>
+                    </div>
                     <div className="proj-userpic"></div>
                       <div className="proj-title-cover">
                         <div className="proj-title">{project.title}</div>
@@ -70,6 +74,8 @@ class ProjectDetail extends React.Component {
                     <div className="num-likes">
                       <img src="https://s3.us-east-2.amazonaws.com/clone-app-dev/like_icon.svg" />
                       {this.props.project.liker_ids.length}
+                      <img className='smallCommenticon' src='https://s3.us-east-2.amazonaws.com/clone-app-dev/noun_974856_cc.svg' />
+                      {project.comment_num}
                     </div>
                     {/*                 APPRECIATE BUTTON                 */}
                     {this.renderOrNot()}

@@ -10,6 +10,10 @@ class ProjectIndex extends React.Component {
     this.props.requestAllProjects();
   }
 
+  componentDidMount(){
+    this.props.requestAllProjects();
+  }
+
   render(){
     const { projects, users, requestSingleProject, currentUser, requestComments } = this.props;
     if((Object.keys(this.props).length === 0) || (projects === undefined)){

@@ -3,6 +3,11 @@
 div.ReactModal__Content ReactModal__Content--after-open {
   border: none;
   background: none;
+  z-index: 6;
+}
+
+.ReactModal__Overlay ReactModal__Overlay--after-open {
+  z-index: 6;
 }
 
 .ReactModal__Body--open {
@@ -10,6 +15,7 @@ div.ReactModal__Content ReactModal__Content--after-open {
   position: fixed;
   width: 100%;
   height: 100%;
+  z-index: 6;
 }
 
 div.ReactModal__Content::-webkit-scrollbar {
@@ -18,6 +24,7 @@ div.ReactModal__Content::-webkit-scrollbar {
 
 div.modal-box {
   background-color: red;
+  z-index: 6;
 }
 
 .modal-box::-webkit-scrollbar {

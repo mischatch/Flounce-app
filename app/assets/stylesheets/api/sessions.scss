@@ -11,10 +11,14 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.header {
+header {
+  height: 60px;
+}
+
+div.globe {
   position: fixed;
   width: 100%;
-  z-index: 4;
+  z-index: 1;
 }
 
 .hidden {
@@ -46,9 +50,6 @@ div.sighup-to-cont {
   font-size: 10px;
 }
 
-header {
-
-}
 
 .errors-div {
   margin: 5px;

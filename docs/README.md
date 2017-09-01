@@ -1,15 +1,15 @@
-# Clone Project Proposal
+# Flounce Project Proposal
 
 [Heroku link][heroku]
 
 [Trello link][trello]
 
-[heroku]: https://clone-app.herokuapp.com/
+[heroku]: https://flounce-app.herokuapp.com/
 [trello]: https://trello.com/b/fK9Dowvq/clone-app
 
 ## Minimum Viable Product
 
-Clone is a portfolio showcase web application inspired by Behance.net built with Ruby on Rails and React/Redux. All MVP features will have smooth, bug-free navigation, adequate seed data and stylish CSS:
+Flounce is a portfolio showcase web application inspired by Behance.net built with Ruby on Rails and React/Redux. All MVP features will have smooth, bug-free navigation, adequate seed data and stylish CSS:
 
 1. Hosting on Heroku
 2. Production README.md

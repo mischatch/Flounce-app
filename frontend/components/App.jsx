@@ -5,6 +5,7 @@ import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProjectContainer from "./project/project_container";
 import ProjectDetailContainer from './project/project_detail_container';
+import UserProfileContainer from './user/user_profile_container';
 
 
 const App = () => {
@@ -14,19 +15,21 @@ const App = () => {
   }
   return (
   <div>
-    <header className={headerClass}>
-      <div className="globe">
-        <GreetingContainer />
-        
-      </div>
-    </header>
+    <div>
+      <header className={headerClass}>
+        <div className="globe">
+          <GreetingContainer />
+        </div>
+      </header>
+    </div>
       {/* <div className={headerClass}> */}
       {/* <ProjectContainer /> */}
       {/* </div> */}
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
-      <Route path='/projects/:projectId' component={ProjectDetailContainer} />
+      // <Route path='/projects/:projectId' component={ProjectDetailContainer} />
+      <Route path='/users/:userId' component={UserProfileContainer} />
       <Route path='/' component={ProjectContainer} />
     </Switch>
   </div>

@@ -19,14 +19,14 @@ div.border-box {
 
 div.content-box {
   margin: 0 auto;
-  margin-top: 40px;
+
   padding-top: 70px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   width: 90%;
   justify-content: center;
-
+  z-index: 0;
 }
 
 div.card-box {
@@ -117,4 +117,10 @@ div.card-likes-cmnts {
 img.smallLike {
   width: 15px;
   padding-right: 5px;
+}
+
+img.smallCommenticon {
+  width: 15px;
+  padding-right: 5px;
+  padding-left: 10px;
 }
