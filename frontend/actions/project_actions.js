@@ -3,17 +3,17 @@ import * as ProjectAPIUtil from '../util/project_api_util';
 export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 
-export const receiveAllProjects = ({projects, users}) => ({
+export const receiveAllProjects = ({projects}) => ({
   type: RECEIVE_ALL_PROJECTS,
   projects,
-  users
+  // users
 });
 
-export const receiveProject = ({project, user}) => {
+export const receiveProject = ({project}) => {
   return {
       type: RECEIVE_PROJECT,
       project,
-      user
+      // user
     };
   };
 

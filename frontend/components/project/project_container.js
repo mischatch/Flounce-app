@@ -5,6 +5,7 @@ import ProjectIndex from './project_index';
 import { selectAllProjects } from '../../reducers/selectors';
 import { selectComments } from '../../reducers/selectors';
 import withRouter from 'react-router';
+import { fetchUsers } from '../../actions/user_actions';
 
 const mapStateToProps = state => {
   return {
@@ -21,7 +22,8 @@ const mapDispatchToProps = dispatch => {
   return {
     requestAllProjects: () => dispatch(requestAllProjects()),
     requestComments: () => dispatch(requestComments()),
-    requestImages: () => dispatch(requestImages())
+    requestImages: () => dispatch(requestImages()),
+    fetchUsers: () => dispatch(fetchUsers()),
   };
 };
 

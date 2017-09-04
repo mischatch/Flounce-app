@@ -42,7 +42,7 @@ class CommentForm extends React.Component {
             <form className="" onSubmit={ this.handleSubmit }>
               <div className="form-pic">
               <div className="future-comment-userpic">
-                <img src={this.props.currentUser.userpic_url} />
+                <img src={this.props.currentUser.userpic} />
               </div>
               <textarea
                 className="comment-textarea"

@@ -8,10 +8,12 @@ class ProjectIndex extends React.Component {
 
   componentWillMount(){
     this.props.requestAllProjects();
+    this.props.fetchUsers();
   }
 
   componentDidMount(){
     this.props.requestAllProjects();
+    this.props.fetchUsers();
   }
 
   render(){
@@ -19,6 +21,7 @@ class ProjectIndex extends React.Component {
     if((Object.keys(this.props).length === 0) || (projects === undefined)){
       return null;
     }
+
     return (
       <div className="border-box">
         <div className="ADBOX">

@@ -1,5 +1,6 @@
 import { RECEIVE_ALL_PROJECTS, RECEIVE_PROJECT } from '../actions/project_actions';
 import { RECEIVE_LIKE, DELETE_LIKE } from '../actions/like_actions';
+import { RECEIVE_USERS } from '../actions/user_actions';
 
 import merge from 'lodash/merge';
 
@@ -8,6 +9,7 @@ const projectsReducer = (state = {}, action) => {
   let nextState;
   switch(action.type){
     case RECEIVE_ALL_PROJECTS:
+    // case RECEIVE_USERS:
       return action.projects;
     case RECEIVE_PROJECT:
       const newProject = {[action.project.id]: action.project};

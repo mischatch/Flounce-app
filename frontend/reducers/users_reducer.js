@@ -7,7 +7,7 @@ const usersReducer = (state = {}, action) => {
   let nextState;
 
   switch(action.type){
-    case RECEIVE_ALL_PROJECTS:
+    // case RECEIVE_ALL_PROJECTS:
     case RECEIVE_USERS:
       return action.users;
     case RECEIVE_PROJECT:
