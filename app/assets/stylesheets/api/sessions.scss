@@ -90,6 +90,7 @@ div.buttons {
 }
 
 .signUp-btn {
+  color: white;
   background-color: #0057ff;
   padding-left: 14px;
   padding-right: 14px;
@@ -103,6 +104,10 @@ div.buttons {
 
 .signUp-btn:hover {
   filter: brightness(80%);
+}
+
+.signUp-btn:default {
+  color: white;
 }
 
 .login-cont {
@@ -193,6 +198,9 @@ img.headerUPimage {
   // font-size: 20px;
   opacity: 0.8;
 
+}
+a.link {
+  color: #0057ff;
 }
 
 .blue-link {

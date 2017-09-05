@@ -62,7 +62,7 @@ class CommentForm extends React.Component {
       return (
         <div className="coment-alert-cont">
           <div className="comment-alert">
-            User must be signed in to add comment!
+            User must be signed in to add a comment!
           </div>
         </div>
     );

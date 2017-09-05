@@ -37,6 +37,71 @@ pr10 = Project.create!(user_id: h.id, title: 'Everything is possible', descripti
 pr11 = Project.create!(user_id: k.id, title: 'Drawing', description: 'this drawing took me nearly 7 hours, mixed media on grey paper 25x36 cm')
 pr12 = Project.create!(user_id: l.id, title: 'THE LARVAL FORM', description: 'is a short exploration of the colors and shapes inspired by a macro nature')
 
+Like.delete_all
+
+l1 = Like.create!(user_id: b.id, project_id: pr1.id)
+l1 = Like.create!(user_id: c.id, project_id: pr1.id)
+l1 = Like.create!(user_id: d.id, project_id: pr1.id)
+l1 = Like.create!(user_id: e.id, project_id: pr1.id)
+
+l2 = Like.create!(user_id: a.id, project_id: pr2.id)
+l2 = Like.create!(user_id: c.id, project_id: pr2.id)
+l2 = Like.create!(user_id: d.id, project_id: pr2.id)
+l2 = Like.create!(user_id: e.id, project_id: pr2.id)
+l2 = Like.create!(user_id: f.id, project_id: pr2.id)
+
+
+l3 = Like.create!(user_id: d.id, project_id: pr3.id)
+l3 = Like.create!(user_id: e.id, project_id: pr3.id)
+l3 = Like.create!(user_id: f.id, project_id: pr3.id)
+
+l4 = Like.create!(user_id: e.id, project_id: pr4.id)
+l4 = Like.create!(user_id: f.id, project_id: pr4.id)
+l4 = Like.create!(user_id: g.id, project_id: pr4.id)
+l4 = Like.create!(user_id: h.id, project_id: pr4.id)
+l4 = Like.create!(user_id: i.id, project_id: pr4.id)
+
+l5 = Like.create!(user_id: a.id, project_id: pr5.id)
+l5 = Like.create!(user_id: b.id, project_id: pr5.id)
+l5 = Like.create!(user_id: c.id, project_id: pr5.id)
+l5 = Like.create!(user_id: d.id, project_id: pr5.id)
+
+
+l6 = Like.create!(user_id: f.id, project_id: pr6.id)
+l6 = Like.create!(user_id: e.id, project_id: pr6.id)
+
+l7 = Like.create!(user_id: k.id, project_id: pr7.id)
+l7 = Like.create!(user_id: j.id, project_id: pr7.id)
+l7 = Like.create!(user_id: a.id, project_id: pr7.id)
+
+l8 = Like.create!(user_id: a.id, project_id: pr8.id)
+l8 = Like.create!(user_id: k.id, project_id: pr8.id)
+l8 = Like.create!(user_id: h.id, project_id: pr8.id)
+l8 = Like.create!(user_id: i.id, project_id: pr8.id)
+
+l9 = Like.create!(user_id: b.id, project_id: pr9.id)
+l9 = Like.create!(user_id: d.id, project_id: pr9.id)
+l9 = Like.create!(user_id: e.id, project_id: pr9.id)
+l9 = Like.create!(user_id: c.id, project_id: pr9.id)
+l9 = Like.create!(user_id: f.id, project_id: pr9.id)
+
+l10 = Like.create!(user_id: d.id, project_id: pr10.id)
+l10 = Like.create!(user_id: b.id, project_id: pr10.id)
+l10 = Like.create!(user_id: a.id, project_id: pr10.id)
+l10 = Like.create!(user_id: g.id, project_id: pr10.id)
+
+l11 = Like.create!(user_id: h.id, project_id: pr11.id)
+l11 = Like.create!(user_id: i.id, project_id: pr11.id)
+l11 = Like.create!(user_id: a.id, project_id: pr11.id)
+l11 = Like.create!(user_id: b.id, project_id: pr11.id)
+l11 = Like.create!(user_id: c.id, project_id: pr11.id)
+
+l12 = Like.create!(user_id: d.id, project_id: pr12.id)
+l12 = Like.create!(user_id: e.id, project_id: pr12.id)
+l12 = Like.create!(user_id: f.id, project_id: pr12.id)
+l12 = Like.create!(user_id: g.id, project_id: pr12.id)
+l12 = Like.create!(user_id: a.id, project_id: pr12.id)
+l12 = Like.create!(user_id: b.id, project_id: pr12.id)
 
 Comment.delete_all
 
