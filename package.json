@@ -7,7 +7,9 @@
     "doc": "docs",
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+     "redux-logger": "^3.0.6"
+  },
   "engines": {
     "node": "v6.10.1",
     "npm": "5.3.0"
