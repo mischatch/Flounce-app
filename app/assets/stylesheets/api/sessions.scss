@@ -126,6 +126,16 @@ div.buttons {
 
 .signup-cont {
   margin-right: 40px;
+  display: flex;
+}
+
+div.demo-log {
+  margin-left: 20px;
+  color: #a4a4a4;
+}
+
+div.demo-log:hover {
+  cursor: pointer;
 }
 
 .signUp-btn {
@@ -144,20 +154,12 @@ div.buttons {
 }
 
 .header-button {
-  // background-color: #0057ff;
   background-color: transparent;
-  // padding-left: 14px;
-  // padding-right: 14px;
-  // padding-bottom: 9px;
-  // padding-top: 9px;
-  // border-radius: 50px;
   cursor: pointer;
   transition: filter 500ms ease-in-out;
   font-size: 14px;
   color: #a4a4a4;
   border: none;
-  // margin-right: 16px;
-  margin-left: 27px;
   font-weight: 600;
 }
 .header-button:hover {
@@ -168,6 +170,9 @@ div.buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+.urname a {
+  color: inherit;
 }
 
 .headerUP {

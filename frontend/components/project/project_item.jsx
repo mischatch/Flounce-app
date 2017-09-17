@@ -54,7 +54,9 @@ class ProjectItem extends React.Component {
                 </section>
                   <div className="card-text-space">
                     <div className="card-text">
+                      <section onClick={this.openModal}>
                       <div className="card-title">{project.title}</div>
+                      </section>
                       <Link to={`/users/${user.id}`}>
                       <div className="card-name">{user.username}</div>
                       </Link>
