@@ -3,14 +3,26 @@ import UserProfileContainer from './user_profile_container';
 import UserProjectContainer from './user_project_container';
 
 class UserProfile extends React.Component {
+  constructor(props){
+    super(props);
+
+  }
+
+
+
 
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
+    this.props.requestAllProjects();
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps, nextState){
     if (this.props.match.params.userId !== nextProps.match.params.userId){
      this.props.fetchUser(nextProps.match.params.userId);
+     this.props.requestAllProjects();
+   } else if (Object.keys(this.props.images).length !== Object.keys(nextProps.images).length){
+     this.props.fetchUser(nextProps.match.params.userId);
+     this.props.requestAllProjects();
    }
  }
 
@@ -26,7 +38,7 @@ class UserProfile extends React.Component {
           <div className="profileBox">
             <div className="profileSidebar">
               <div className="profileUP">
-                <img className="profileUPimg" src={user.userpic} />
+                <img className="profileUPimg" src={ user.userpic } />
               </div>
               <div className="Podpis">
               {user.username}
@@ -38,7 +50,8 @@ class UserProfile extends React.Component {
             <div className="profile-body">
             <UserProjectContainer
               user={user}
-              projects={user.projects}/>
+              projects={user.projects}
+              />
             </div>
           </div>
         </div>

@@ -48,6 +48,7 @@ class ProjectDetail extends React.Component {
 
   render(){
     const { project, user, projectId, currentUser } = this.props;
+    
     return (
       <div>
         <div className="ProjectModal?">

@@ -8,9 +8,10 @@ import { requestAllProjects } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    currentUser: state.session.currentUser,
     projects: ownProps.projects,
     allProjects: state.projects,
-
+    images: state.images,
   };
 };
 

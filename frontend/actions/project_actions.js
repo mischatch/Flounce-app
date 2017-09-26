@@ -6,14 +6,12 @@ export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const receiveAllProjects = ({projects}) => ({
   type: RECEIVE_ALL_PROJECTS,
   projects,
-  // users
 });
 
-export const receiveProject = ({project}) => {
+export const receiveProject = ({ project }) => {
   return {
       type: RECEIVE_PROJECT,
       project,
-      // user
     };
   };
 

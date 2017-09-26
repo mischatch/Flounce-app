@@ -1,22 +1,21 @@
 import { connect } from 'react-redux';
+import CreateProject from './create_project';
+import { createProject } from '../../actions/project_actions';
 import { fetchUser } from '../../actions/user_actions';
-import UserProfile from './user_profile';
-import { withRouter } from 'react-router';
 import { requestAllProjects } from '../../actions/project_actions';
 
 
-const mapStateToProps = (state, ownProps) => {
-  const userId = ownProps.match.params.userId;
+const mapStateToProps = state => {
   return {
-    user: state.users[userId],
-    images: state.images,
+    currentUser: state.session.currentUser,
   };
 };
 
 
 const mapDispatchToProps = dispatch => ({
+  createProject: project => dispatch(createProject(project)),
   fetchUser: userId => dispatch(fetchUser(userId)),
   requestAllProjects: () => dispatch(requestAllProjects()),
-});
+})
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserProfile));
+export default connect(mapStateToProps, mapDispatchToProps)(CreateProject);

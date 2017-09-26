@@ -13,7 +13,8 @@ const projectsReducer = (state = {}, action) => {
       return action.projects;
     case RECEIVE_PROJECT:
       const newProject = {[action.project.id]: action.project};
-      return newProject;
+      nextState = merge({}, newProject, state);
+      return nextState;
     case RECEIVE_LIKE:
       nextState = merge({}, state);
       nextState[action.like.project_id].liker_ids.push(action.like.user_id);

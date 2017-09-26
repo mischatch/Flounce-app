@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { receiveAllProjects } from '../../actions/project_actions';
+import { requestAllProjects } from '../../actions/project_actions';
 import { requestComments } from '../../actions/comment_actions';
 import ProjectIndex from './project_index';
 import { selectAllProjects } from '../../reducers/selectors';

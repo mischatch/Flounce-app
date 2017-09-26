@@ -1,0 +1,32 @@
+div.create-card {
+  width: 205px;
+  height: 305px;
+  border-radius: 4px;
+  // box-shadow: 0 1px 2px rgba(25, 25, 25, 0.2);
+  margin: 0 10px 20px 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+div.circle {
+  width: 90px;
+  height: 90px;
+  border: 1px solid rgba(25, 25, 25, 0.02);
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(25, 25, 25, 0.2);
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+
+div.circle > img {
+  width: 55px;
+}
+
+div.place {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+}

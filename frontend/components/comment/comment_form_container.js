@@ -7,7 +7,7 @@ import { createComment, deleteComment } from '../../actions/comment_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    prjectId: ownProps.projectId,
+    projectId: ownProps.projectId,
   };
 };
 

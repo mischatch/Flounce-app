@@ -23,3 +23,8 @@ export const requestImage = (projectId, imageId) => dispatch => {
   return ImageAPIUtil.fetchImage(imageId)
   .then(image => dispatch(receiveImage(image)));
 };
+
+export const uploadImage = (projectId, image) => dispatch => {
+  return ImageAPIUtil.createImage(projectId, image)
+  .then(image => dispatch(receiveImage(image)));
+};
