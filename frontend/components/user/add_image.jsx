@@ -47,7 +47,6 @@ class AddImage extends React.Component {
 
 
   handleSubmit(e){
-    debugger
     const files = this.state.preview.imageFile;
     files.forEach((file) => {
       const formData = new FormData();
@@ -63,16 +62,18 @@ class AddImage extends React.Component {
 
     const prev = this.state.preview.imageUrls.map((img, idx) => <Preview img={img} key={idx} /> );
     return (
-      <div>
+      <div className='add-images-cont'>
 
-        <h1>Add Image</h1>
         <form onSubmit={this.handleSubmit}>
-          <input multiple="true" type='file' onChange={this.handleImage} />
+          {   /*<input multiple="true" type='file' onChange={this.handleImage} />  */}
 
-          <Dropzone onDrop={this.handleImage}>
-            <button>Add image to your project</button>
-
+          <Dropzone className='dropzone' onDrop={this.handleImage}>
+            <img src="https://s3.us-east-2.amazonaws.com/clone-app-dev/upload.svg" />
+            Click to select images
+            <br/>OR
+              <br/>Drag and Drop
           </Dropzone>
+          <button>Add Image</button>
         </form>
 
           { prev }

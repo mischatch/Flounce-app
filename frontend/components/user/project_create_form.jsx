@@ -1,48 +1,40 @@
 import React from 'react';
 import AddImageContainer from './add_image_container';
 
+
 class ProjectCreateForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { project: {
+    this.state = {
       user_id: null,
       title: '',
       description: '',
       imageUrls: '',
-    },
-  image: {
-    project_id: null,
-    image_urls: [],
-  }};
+    };
 
 
-  this.arg = true;
+    this.arg = true;
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.closeModal = props.closeModal.bind(this);
     this.renderUpload = this.renderUpload.bind(this);
+    this.textOrPhoto = this.textOrPhoto.bind(this);
   }
 
 
 
   handleInput(e) {
     e.preventDefault();
-    this.setState({ project: {
-      user_id: this.props.currentUser.id,
-      title: e.currentTarget.value,
-      description: e.currentTarget.value,
-      imageUrls: '',
-    }});
-  }
-
-
-  upload(images){
-    // let imagesMap = images.map(image => {
-    //   this.createImage(image);
-    // });
-    // return imagesMap;
-    // let file =
+    if(e.currentTarget.name === "title"){
+      this.setState({
+        title: e.currentTarget.value,
+    });
+    } else if (e.currentTarget.name === "description") {
+      this.setState({
+        description: e.currentTarget.value,
+      });
+    }
   }
 
 
@@ -54,10 +46,8 @@ class ProjectCreateForm extends React.Component {
         title: '',
         description: '',
         imageUrls: [],
-      }}))
-      // .then(() => this.renderUpload());
+      }}));
       this.arg = false;
-      // .then(() => this.closeModal());
   }
 
   renderUpload(){
@@ -70,16 +60,20 @@ class ProjectCreateForm extends React.Component {
     )
   }
 
-
-  render() {
+  textOrPhoto(){
     if(this.arg === true){
       return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <input type='text' value={this.state.title} onChange={this.handleInput} />
-            <input type='text' value={this.state.description} onChange={this.handleInput} />
-
-            <button>Create Project</button>
+        <div className='text-form'>
+          <form onSubmit={this.handleSubmit} autoComplete="off">
+            <div className='text-inputs'>
+              <h2>Project Title</h2>
+              <input name="title" type='text' value={this.state.title} onChange={this.handleInput} />
+              <h2>Project Description</h2>
+              <textarea className='description' name="description" type='text' value={this.state.description} onChange={this.handleInput} />
+            </div>
+            <div className='button-cont'>
+              <button>Create Project</button>
+            </div>
           </form>
         </div> )
     } else {
@@ -89,6 +83,21 @@ class ProjectCreateForm extends React.Component {
         </div>
       )
     }
+  }
+
+
+
+  render() {
+    return (
+      <div>
+        <div className='add-project-header'>
+          <div className='add-text-description'><h1 className={this.arg === true ? 'active' : 'inactive'}>1. Title and description</h1></div>
+          <div className='add-images'><h1 className={this.arg === true ? 'inactive' : 'active'}>2. Add images</h1></div>
+        </div>
+        { this.textOrPhoto() }
+
+      </div>
+    )
   }
 }
 

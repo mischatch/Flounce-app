@@ -42,7 +42,7 @@ class UserProject extends React.Component {
 
 
   render() {
-    if(this.props.user.projects === undefined || this.props.user.projects.length === 0){
+    if(this.props.user.projects === undefined && this.props.user.projects.length === 0){
       return null;
     } else if (Object.keys(this.props.allProjects).length === 0){
       return null;

@@ -9,7 +9,7 @@ class Preview extends React.Component {
   render(){
     return(
       <ul>
-        <li>
+        <li className="list-image">
           <img src={this.props.img} />
         </li>
       </ul>

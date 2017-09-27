@@ -11,8 +11,8 @@ const style = {
     content : {
       position                   : 'absolute',
       top                        : '20px',
-      left                       : '40px',
-      right                      : '40px',
+      left                       : '70px',
+      right                      : '70px',
       bottom                     : '0px',
       overflow                   : 'auto',
       WebkitOverflowScrolling    : 'touch',
