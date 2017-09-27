@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ProjectDetail from './project_detail';
 import { createLike, unlikeProject } from '../../actions/like_actions';
 import { selectLikes } from '../../reducers/selectors';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -23,4 +24,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectDetail);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProjectDetail));

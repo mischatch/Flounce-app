@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import ProjectIndex from './project_index';
 import ProjectDetailContainer from './project_detail_container';
 import ProjectDetail from './project_detail';
-
+import { requestSingleProject } from '../../actions/project_actions';
+import { requestAllProject } from '../../actions/project_actions';
 
 
 class ProjectItem extends React.Component {
@@ -19,14 +20,16 @@ class ProjectItem extends React.Component {
   }
 
   // componentDidMount(){
-  //   this.props.requestSingleProject(this.props.user.id);
+  //   debugger
+  //   requestAllProjects();
   // }
 
-  // componentWillReceiveProps(nextProps){
-  //  if(this.props.project[id] !== nextProps.match.params.projectId){
-  //    this.props.requestSingleProject(nextProps.match.params.projectId);
-  //  }
-  // }
+  componentWillReceiveProps(nextProps){
+    debugger
+   if(this.props.project.id !== nextProps.project.id){
+     this.props.requestSingleProject(nextProps.match.params.projectId);
+   }
+  }
 
   closeModal() {
     this.setState({ modalOpen: false });
@@ -39,7 +42,11 @@ class ProjectItem extends React.Component {
 
 
   render (){
+    if(this.props.user === undefined){
+      return null;
+    }
       const { user, project, images } = this.props;
+      debugger
       return (
         <div className="project-box-small">
           <div className="card-box">

@@ -4,8 +4,9 @@ import { requestComments } from '../../actions/comment_actions';
 import ProjectIndex from './project_index';
 import { selectAllProjects } from '../../reducers/selectors';
 import { selectComments } from '../../reducers/selectors';
-import withRouter from 'react-router';
+
 import { fetchUsers } from '../../actions/user_actions';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = state => {
   return {
@@ -28,4 +29,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProjectIndex));
