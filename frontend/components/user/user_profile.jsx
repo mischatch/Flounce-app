@@ -6,7 +6,6 @@ import Greeting from '../greeting/greeting';
 class UserProfile extends React.Component {
   constructor(props){
     super(props);
-    debugger
     if (this.props.currentUser){
       this.state = {
         display: 'none',
@@ -86,7 +85,6 @@ class UserProfile extends React.Component {
   handleSubmitAbout(e){
     const id = this.props.currentUser.id;
    if (e.keyCode == 13 && e.shiftKey == false){
-     debugger
     const formData = new FormData();
     formData.append("user[about]", this.state.about);
     formData.append("user[id]", id);
