@@ -24,25 +24,21 @@ class AddImage extends React.Component {
   }
 
   handleImage(e){
-      let files = e.currentTarget === undefined ? Array.from(Object.values(e)) : Array.from(Object.values(e.currentTarget.files));
-
+    let files = e.currentTarget === undefined ? Array.from(Object.values(e)) : Array.from(Object.values(e.currentTarget.files));
     files.forEach((file) => {
-
       var reader = new FileReader();
-
-
       reader.onloadend = () => {
         this.setState({ preview: {
           imageFile: this.state.preview.imageFile.concat(file),
           imageUrls: this.state.preview.imageUrls.concat(reader.result),
-        },
-        image: {
-          project_id: this.props.LastProject,
-        }
-      });
-    };
-    reader.readAsDataURL(file);
-  });
+          },
+          image: {
+            project_id: this.props.LastProject,
+          }
+        });
+      };
+      reader.readAsDataURL(file);
+    });
   }
 
 
@@ -52,7 +48,7 @@ class AddImage extends React.Component {
       const formData = new FormData();
       formData.append("image[image]", file);
       this.props.uploadImage(this.state.image.project_id, formData);
-    })
+    });
     this.props.closeModal();
 
   }

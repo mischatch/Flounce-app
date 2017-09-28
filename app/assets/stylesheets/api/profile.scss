@@ -46,6 +46,7 @@ img.profileUPimg {
 div.profileUP {
   text-align: center;
   padding: 20px;
+  position: relative;
 }
 
 div.profile-body-content-box {
@@ -67,4 +68,31 @@ div.PodpisAbout {
   text-align: center;
   font-size: 16px;
   color: #717788;
+}
+
+div.update-user-link {
+    display: flex;
+    position: absolute;
+    left: 65px;
+    bottom: 70px;
+}
+
+textarea.about-form {
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  font-size: 16px;
+  color: #717788;
+  resize: none;
+  border: none;
+}
+
+textarea.about-form:hover {
+  cursor: text;
+}
+
+textarea.about-form:focus {
+  outline: 0;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
 }

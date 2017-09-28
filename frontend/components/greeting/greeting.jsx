@@ -14,7 +14,6 @@ class Greeting extends React.Component {
     this.props.login( demoUser );
   }
 
-
   sessionLinks(){
 
     return(
@@ -61,7 +60,7 @@ class Greeting extends React.Component {
         </h2>
         <Link to={`/users/${currentUser.id}`}>
         <div className="headerUP">
-          <img className="headerUPimage" src={currentUser.userpic} />
+          <img className="headerUPimage" src={this.props.picUrl} />
         </div>
       </Link>
       </div>

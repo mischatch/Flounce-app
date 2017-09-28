@@ -1,14 +1,25 @@
 import React from 'react';
 import UserProfileContainer from './user_profile_container';
 import UserProjectContainer from './user_project_container';
+import Greeting from '../greeting/greeting';
 
 class UserProfile extends React.Component {
   constructor(props){
     super(props);
 
+    this.state = {
+      display: 'none',
+      imageUrl: '',
+      imageFile: null,
+      about: '',
+    };
+
+    this.showUpdate = this.showUpdate.bind(this);
+    this.hideUpdate = this.hideUpdate.bind(this);
+    this.handleUpdatePic = this.handleUpdatePic.bind(this);
+    this.aboutForm = this.aboutForm.bind(this);
+
   }
-
-
 
 
   componentDidMount(){
@@ -26,25 +37,92 @@ class UserProfile extends React.Component {
    }
  }
 
+  showUpdate(){
+    this.setState({
+      display: 'block',
+    });
+  }
+
+  hideUpdate(){
+    this.setState({
+      display: 'none',
+    });
+  }
+
+
+
+  handleUpdatePic(e) {
+   const file = e.currentTarget.files[0];
+   var reader = new FileReader();
+   reader.readAsDataURL(file);
+   this.setState({ imageFile: file }, () => {
+     const formData = new FormData();
+     formData.append("user[userpic]", this.state.imageFile);
+     formData.append("user[id]", this.props.currentUser.id);
+     const id = this.props.currentUser.id;
+     this.props.updateUser(formData, id);
+   });
+  //  Greeting.forceUpdate()
+ }
+
+ handleAboutForm(e){
+   e.preventDefault();
+   if (e.keyCode == 13 && e.shiftKey == false){
+    //  submit to backend
+   } else {
+     this.setState({
+       about
+     })
+    //  update form
+   }
+ }
+
+
+   aboutForm(){
+     return (
+       <div>
+         <textarea
+           onKeyDown={this.handleAboutForm}
+           spellcheck='false'
+           type="text"
+           placeholder='tell about yourself ...'
+           className='about-form'>{this.props.user.about === null ? '' : this.props.user.about}</textarea>
+       </div>
+     )
+   }
+
+
+
 
   render() {
     if(this.props.user === undefined){
       return null;
     }
     const { user } = this.props;
+    let pic = '';
+    if (user.userpic[0] === '/' && this.state.imageUrl === ''){
+      pic = user.userpic;
+    } else if(this.state.imageUrl !== '') {
+      pic = this.state.imageUrl;
+    } else {
+      pic = user.userpic;
+    }
     return (
       <div className="profileCanvas">
         <div className="profileFrame">
           <div className="profileBox">
             <div className="profileSidebar">
-              <div className="profileUP">
-                <img className="profileUPimg" src={ user.userpic } />
+              <div className="profileUP" onMouseEnter={this.showUpdate} onMouseLeave={this.hideUpdate}>
+                <div className='update-user-link' style={{display: this.state.display}}>
+                  <input type="file" onChange={this.handleUpdatePic} />
+                  </div>
+                <img className="profileUPimg" src={ pic } />
               </div>
               <div className="Podpis">
               {user.username}
             </div>
             <div className="PodpisAbout">
-              {user.about}
+              {user.about === null ? this.aboutForm() : user.about}
             </div>
             </div>
             <div className="profile-body">

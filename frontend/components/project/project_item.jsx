@@ -20,12 +20,10 @@ class ProjectItem extends React.Component {
   }
 
   // componentDidMount(){
-  //   debugger
   //   requestAllProjects();
   // }
 
   componentWillReceiveProps(nextProps){
-    debugger
    if(this.props.project.id !== nextProps.project.id){
      this.props.requestSingleProject(nextProps.match.params.projectId);
    }
@@ -46,7 +44,6 @@ class ProjectItem extends React.Component {
       return null;
     }
       const { user, project, images } = this.props;
-      debugger
       return (
         <div className="project-box-small">
           <div className="card-box">
