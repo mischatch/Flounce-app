@@ -27,6 +27,9 @@ div.profileSidebar {
   height: 100%;
   border: 1px solid #E8E8E8;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 div.profile-body {
@@ -47,6 +50,10 @@ div.profileUP {
   text-align: center;
   padding: 20px;
   position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  align-self: center;
 }
 
 div.profile-body-content-box {
@@ -73,8 +80,7 @@ div.PodpisAbout {
 div.update-user-link {
     display: flex;
     position: absolute;
-    left: 65px;
-    bottom: 70px;
+
 }
 
 textarea.about-form {
@@ -88,11 +94,42 @@ textarea.about-form {
 }
 
 textarea.about-form:hover {
-  cursor: text;
+  cursor: pointer;
 }
 
 textarea.about-form:focus {
   outline: 0;
   border: 1px solid #e8e8e8;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+div.update-user-link > input {
+  cursor: poiner;
+  height: 180px;
+  width: 180px;
+  background: rgba(19, 19, 19, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+div.update-user-link {
+  height: 180px;
+  width: 180px;
+  background: rgba(19, 19, 19, 0.3);
+  border-radius: 50%;
+  transition-timing-function: 500 ease-in-out;
+}
+
+div.update-user-link {
+  cursor: pointer;
+}
+
+img.photo-icon-upload {
+  width: 70px;
+  height: 42px;
+  margin-top: 110px;
+  opacity: 0.5;
+  position: fixed;
+  margin-left: 52px;
 }
