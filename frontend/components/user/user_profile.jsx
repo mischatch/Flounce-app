@@ -93,22 +93,28 @@ class UserProfile extends React.Component {
   }
 
    aboutForm(){
-     return (
-       <div>
-         <form
-           onSubmit={this.handleSubmitAbout}
-           onKeyDown={(e) => {this.handleSubmitAbout(e)}}>
-           <textarea
-             value={this.state.about === null ? '' : this.state.about}
+     if (!this.props.currentUser){
+       return  this.props.user.about;
+     } else if (this.props.currentUser.id === user.id){
+       return (
+         <div>
+           <form
+             onSubmit={this.handleSubmitAbout}
+             onKeyDown={(e) => {this.handleSubmitAbout(e)}}>
+             <textarea
+               value={this.state.about === null ? '' : this.state.about}
 
-             onChange={this.handleAboutForm}
-             spellCheck='false'
-             type="text"
-             placeholder='tell about yourself...'
-             className='about-form'>{this.state.about === null ? '' : this.state.about}</textarea>
-         </form>
-       </div>
-     )
+               onChange={this.handleAboutForm}
+               spellCheck='false'
+               type="text"
+               placeholder='tell about yourself...'
+               className='about-form'>{this.state.about === null ? '' : this.state.about}</textarea>
+           </form>
+         </div>
+       )
+     } else {
+       return this.props.user.about;
+     }
    }
 
    showOrNot(){
@@ -144,6 +150,7 @@ class UserProfile extends React.Component {
 
 
   render() {
+    debugger
     if(this.props.user === undefined){
       return null;
     }
@@ -168,7 +175,7 @@ class UserProfile extends React.Component {
               {user.username}
             </div>
             <div className="PodpisAbout">
-              {this.props.currentUser.id === user.id ? this.aboutForm() : user.about}
+              { this.aboutForm() }
             </div>
             </div>
             <div className="profile-body">
