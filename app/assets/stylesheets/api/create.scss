@@ -147,6 +147,11 @@ textarea.description {
   resize: none;
   padding-bottom: 4px;
   padding-top: 5px;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 form > div.text-inputs> h2 {

@@ -75,6 +75,7 @@ class UserProfile extends React.Component {
  }
 
   handleAboutForm(e){
+    debugger
     e.preventDefault();
 
     this.setState({
@@ -89,6 +90,7 @@ class UserProfile extends React.Component {
     formData.append("user[about]", this.state.about);
     formData.append("user[id]", id);
     this.props.updateUser(formData, id);
+    $('textarea').blur();
     }
   }
 
@@ -102,6 +104,7 @@ class UserProfile extends React.Component {
              onSubmit={this.handleSubmitAbout}
              onKeyDown={(e) => {this.handleSubmitAbout(e)}}>
              <textarea
+               id="textarea-about"
                value={this.state.about === null ? '' : this.state.about}
 
                onChange={this.handleAboutForm}
@@ -150,6 +153,10 @@ class UserProfile extends React.Component {
 
 
   render() {
+    $('form').on( 'change keyup keydown paste cut', 'textarea', function (){
+      $(this).height(0).height(this.scrollHeight);
+      }).find( 'textarea' ).change();
+
     if(this.props.user === undefined){
       return null;
     }
