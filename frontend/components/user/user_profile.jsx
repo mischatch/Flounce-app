@@ -95,7 +95,7 @@ class UserProfile extends React.Component {
    aboutForm(){
      if (!this.props.currentUser){
        return  this.props.user.about;
-     } else if (this.props.currentUser.id === user.id){
+     } else if (this.props.currentUser.id === this.props.user.id){
        return (
          <div>
            <form
@@ -150,7 +150,6 @@ class UserProfile extends React.Component {
 
 
   render() {
-    debugger
     if(this.props.user === undefined){
       return null;
     }
