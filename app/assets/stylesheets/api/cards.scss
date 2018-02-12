@@ -18,9 +18,7 @@ div.border-box {
 }
 
 div.content-box {
-  margin: 0 auto;
-
-  padding-top: 70px;
+  margin: 70px auto 40px auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -143,4 +141,26 @@ div.ADTEXTBOX {
   font-size: 50px;
   margin-left: 90px;
   margin-right: 90px;
+}
+
+footer {
+  bottom: 0px;
+  height: 40px;
+  background-color: #2b2b2b;
+  color: #a4a4a4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 0 40px 0 40px;
+}
+
+.footer-links > a {
+  margin-left: 10px;
+  color: #a4a4a4;
+  text-decoration: underline;
+}
+
+.footer-links > a:visited{
+  color: #a4a4a4;
 }

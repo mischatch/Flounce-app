@@ -32,6 +32,15 @@ const App = () => {
       <Route path='/users/:userId' component={UserProfileContainer} />
       <Route path='/' component={ProjectContainer} />
     </Switch>
+    <footer>
+      <div className="footer-name">
+        Mikhail Cheburakhtin
+      </div>
+      <div className="footer-links">
+        <a href="http://www.mischatch.me/">Portfolio</a>
+        <a href="https://github.com/mischatch">Github</a>
+      </div>
+    </footer>
   </div>
 )};
 
