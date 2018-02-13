@@ -29,6 +29,8 @@ div.globe {
   display: flex;
   justify-content: center;
   background-color:  #EAEDF6;
+  height: -webkit-fill-available;
+  margin-bottom: -40px;
 }
 
 .logo {

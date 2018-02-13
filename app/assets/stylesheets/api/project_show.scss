@@ -384,6 +384,10 @@ div.form-pic {
   flex-direction: row;
 }
 
-.UserLink:visited {
+a.UserLink {
+  color: inherit;
+}
+
+a.UserLink:visited {
   color: inherit;
 }

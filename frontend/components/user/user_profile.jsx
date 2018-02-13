@@ -75,7 +75,6 @@ class UserProfile extends React.Component {
  }
 
   handleAboutForm(e){
-    debugger
     e.preventDefault();
 
     this.setState({

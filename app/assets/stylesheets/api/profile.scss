@@ -2,7 +2,12 @@
 
 div.profileCanvas {
   width: 95%;
-  height: 100%;
+  height: -webkit-fill-available;
+  margin-bottom: -100px;
+}
+
+html, body, #app, #app > div {
+  height: 100%
 }
 
 div.profileFrame {
@@ -24,12 +29,15 @@ div.profileBox {
 
 div.profileSidebar {
   width: 400px;
-  height: 100%;
+  height: fit-content;
   border: 1px solid #E8E8E8;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
 }
+
+[data-reactroot]
+        {height: 100% !important; }
 
 div.profile-body {
   width: 100%;

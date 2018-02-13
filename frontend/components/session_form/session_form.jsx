@@ -17,7 +17,6 @@ class SessionForm extends React.Component {
 
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     } else if (this.props.match.path != nextProps.match.path){
@@ -26,7 +25,6 @@ class SessionForm extends React.Component {
   }
 
   componentDidMount(){
-    debugger
     this.clearErrors();
   }
 
