@@ -170,27 +170,27 @@ class UserProfile extends React.Component {
     }
     return (
       <div className="profileCanvas">
-        <div className="profileFrame">
-          <div className="profileBox">
-            <div className="profileSidebar">
+            <div className="side">
+                  <div className="profileSidebar">
 
-              { this.showOrNot() }
+                    { this.showOrNot() }
 
-              <div className="Podpis">
-              {user.username}
+                    <div className="Podpis">
+                    {user.username}
+                  </div>
+                  <div className="PodpisAbout">
+                    { this.aboutForm() }
+                  </div>
+                  </div>
+                  <div className="fill"></div>
             </div>
-            <div className="PodpisAbout">
-              { this.aboutForm() }
-            </div>
-            </div>
+
             <div className="profile-body">
             <UserProjectContainer
               user={user}
               projects={user.projects}
               />
             </div>
-          </div>
-        </div>
       </div>
 
     )

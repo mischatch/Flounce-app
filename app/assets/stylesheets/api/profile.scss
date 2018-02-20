@@ -1,49 +1,54 @@
 
 
 div.profileCanvas {
-  width: 95%;
-  height: -webkit-fill-available;
-  margin-bottom: -100px;
+  min-height: 100%;
+  padding: 45px;
+  display: flex;
 }
 
 html, body, #app, #app > div {
   height: 100%
 }
 
-div.profileFrame {
-  display: grid;
+#root {
   height: 100%;
-  background-color: transparent;
+  padding: 60px 0 40px 0;
 }
 
-
-
-div.profileBox {
-  display: flex;
-  background-color: transparent;
-  margin-left: 5%;
-  margin-top: 40px;
-  min-height: 350px;
+.side {
+  width: 300px;
+  height: 100%;
 }
-
 
 div.profileSidebar {
-  width: 400px;
+  width: 300px;
+  min-height: 345px;
   height: fit-content;
   border: 1px solid #E8E8E8;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  // position: fixed;
+  left: 45px;
+  top: 105px;
+  position: fixed;
+}
+
+.fill {
+  width: 300px;
+  min-height: 100%;
 }
 
 [data-reactroot]
         {height: 100% !important; }
 
 div.profile-body {
-  width: 100%;
+  width: auto;
   height: fit-content;
   background-color: #ffffff;
   border: 1px solid #E8E8E8;
+  // margin-left: 345px;
+  // margin-right: 45px;
 }
 
 img.profileUPimg {
@@ -68,6 +73,7 @@ div.profile-body-content-box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: auto;
 }
 
 div.Podpis {

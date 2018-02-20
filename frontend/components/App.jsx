@@ -15,25 +15,20 @@ const App = () => {
   }
   return (
   <div>
-    <div>
       <header className={headerClass}>
         <div className="globe">
           <GreetingContainer />
         </div>
       </header>
-    </div>
-      {/* <div className={headerClass}> */}
-      {/* <ProjectContainer /> */}
-      {/* </div> */}
+
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
-      // <Route path='/projects/:projectId' component={ProjectDetailContainer} />
       <Route path='/users/:userId' component={UserProfileContainer} />
       <Route path='/' component={ProjectContainer} />
     </Switch>
 
-    
+
     <footer>
       <div className="footer-name">
         Mikhail Cheburakhtin

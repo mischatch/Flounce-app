@@ -49,8 +49,6 @@ class UserProject extends React.Component {
     }
     const { allProjects, projects, user, currentUser } = this.props;
     return (
-      <div>
-        <div className="profile-body-box">
           <div className="profile-body-content-box">
 
             { this.create() }
@@ -69,8 +67,6 @@ class UserProject extends React.Component {
 
             {/*   __________      MODAL  __________            __________*/}
           </div>
-        </div>
-      </div>
     )
   }
 }
