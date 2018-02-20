@@ -191,6 +191,7 @@ class UserProfile extends React.Component {
               projects={user.projects}
               />
             </div>
+          
       </div>
 
     )

@@ -29,6 +29,10 @@ const App = () => {
     </Switch>
 
 
+    <div className="clearfix">
+        <div></div>
+        <div></div>
+    </div>
     <footer>
       <div className="footer-name">
         Mikhail Cheburakhtin

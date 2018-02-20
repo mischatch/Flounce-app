@@ -21,10 +21,15 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 :focus {
   outline: 0;
 }
+html {
+  height: 100%;
+}
+
 body {
   line-height: 1;
   color: black;
   background: white;
+  height: 100%;
 }
 
 /* tables still need 'cellspacing="0"' in the markup */

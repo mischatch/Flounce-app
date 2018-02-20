@@ -6,13 +6,32 @@ div.profileCanvas {
   display: flex;
 }
 
-html, body, #app, #app > div {
-  height: 100%
-}
+// html, body, #app, #app > div {
+//   height: 100%;
+// }
+
+// html, body, #app, #app > div {
+//   height: auto;
+//   min-height: 100% !important;
+//   position: relative;
+//   overflow: auto;
+// }
+// body {
+//   height: auto;
+//   min-height: 100% !important;
+//   position: relative;
+//   overflow: auto;
+// }
 
 #root {
   height: 100%;
   padding: 60px 0 40px 0;
+}
+
+.clearfix:after {
+content: "";
+display: table;
+clear: both;
 }
 
 .side {
