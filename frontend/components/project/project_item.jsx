@@ -7,21 +7,34 @@ import ProjectDetailContainer from './project_detail_container';
 import ProjectDetail from './project_detail';
 import { requestSingleProject } from '../../actions/project_actions';
 import { requestAllProject } from '../../actions/project_actions';
+import loading from '../loading.gif';
 
 
 class ProjectItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loaded: false,
       modalOpen: false
     };
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
+    this.image = this.image.bind(this);
   }
 
   // componentDidMount(){
-  //   requestAllProjects();
+  //   debugger
   // }
+
+  handleImageLoaded(e) {
+    if(e.target.complete){
+      this.setState({ loaded: true });
+    }
+  }
+
+  handleImageErrored() {
+    this.setState({ loaded: "failed to load" });
+  }
 
   componentWillReceiveProps(nextProps){
    if(this.props.project.id !== nextProps.project.id){
@@ -37,6 +50,18 @@ class ProjectItem extends React.Component {
     this.setState({ modalOpen: true });
   }
 
+  image(){
+    debugger
+    if(this.state.imageStatus === "loaded"){
+      debugger
+      return this.props.images[0];
+    } else if (this.state.imageStatus === "failed to load"){
+      return {spinner};
+    } else {
+      debugger
+      return {spinner};
+    }
+  }
 
 
   render (){
@@ -52,7 +77,13 @@ class ProjectItem extends React.Component {
                 <section onClick={this.openModal}>
                 <div className="project-pic">
                   <div className="card-pic">
-                    <img className="imgThumbnail" src={images[0]} />
+                    <img className="imgThumbnail"
+                      src={this.state.loaded ? images[0] : loading }
+
+                      onLoad={this.handleImageLoaded.bind(this)}
+                      onError={this.handleImageErrored.bind(this)}
+                      />
+                      { this.state.imageStatus }
                   </div>
                 </div>
                 </section>

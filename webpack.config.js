@@ -34,15 +34,30 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: [/\.jsx?$/, /\.js?$/],
+        test: [/\.jsx?$/, /\.js?$/, /\.gif$/],
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        exclude: /node_modules/,
+        loader: 'file-loader',
       }
-    ]
+    ],
+    // rules:[
+    //   {
+    //     test: /\.(png|svg|jpg|gif)$/,
+    //     use: [
+    //       'file-loader'
+    //     ]
+    //   }
+    // ]
+
   },
+
   devtool: 'source-map',
   resolve: {
     extensions: [".js", ".jsx", "*"]

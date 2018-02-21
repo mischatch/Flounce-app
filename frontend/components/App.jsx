@@ -8,6 +8,7 @@ import ProjectDetailContainer from './project/project_detail_container';
 import UserProfileContainer from './user/user_profile_container';
 
 
+
 const App = () => {
   let headerClass = 'header';
   if(window.location.hash === "#/login" || window.location.hash === "#/signup"){
