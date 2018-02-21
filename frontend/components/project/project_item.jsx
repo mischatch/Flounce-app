@@ -22,9 +22,6 @@ class ProjectItem extends React.Component {
     this.image = this.image.bind(this);
   }
 
-  // componentDidMount(){
-  //   debugger
-  // }
 
   handleImageLoaded(e) {
     if(e.target.complete){
