@@ -16,6 +16,18 @@ Flounce app is a full-stack web application inspired by Behance. I uses Ruby on 
 
 ![session](https://s3.us-east-2.amazonaws.com/clone-app-dev/auth.png)
 
+## Main page
+
+* Project cards
+
+* User Login/Sign up panel
+
+* Author contact information footer
+
+* Ad banner
+
+![Alt text](/app/assets/images/about/index.png)
+
 ## Modals
 
 * Were used to implement project views on user profile page as well as on index page.
@@ -74,6 +86,7 @@ render (){
 * Logged in users can:
 * Leave comments under projects
 * Appreciate the project(or depreciate)
+* Likes and comments indicator
 
 ![comments and Appreciations](https://s3.us-east-2.amazonaws.com/clone-app-dev/comment_appr.png)
 
@@ -82,6 +95,24 @@ render (){
 * Shows user information(User image, username, about) and users projects.
 
 ![user show page](https://s3.us-east-2.amazonaws.com/clone-app-dev/user_profile.png)
+
+## Creating new profile
+  * User can sing-up
+  * User can add and change avatar pictures
+  * User can add and change about information
+
+![Alt text](/app/assets/images/about/prof.png)
+
+## Project create
+  User can create project with:
+  * Project name
+  * Project about information
+  * Images
+    * Image upload implemented with React Dropzone
+    * Image can be added by selecting or dran'n'drop feature
+    * After selecting images will previewed on the page
+
+![Alt text](/app/assets/images/about/proj.png)
 
 ## Technologies
 * Backend
@@ -97,16 +128,11 @@ render (){
 ## Storage
  * aws.amazon for storing pictures, such as user profile pictures and project pictures.
 
-# Future features
+# Future Features
 
-## User create
-  User create page with ability to change information and upload custom avatar.
 
-## Project create
-  Ability to create project.
+* Project tags
+  *  Ability to add a tag to any project and be able to search by tag along all the projects.
 
-## Project tags
-  Ability to add a tag to any project and be able to search by tag along all the projects.
-
-## User Follows
-  Ability to follow any user with a feed page.
+* User Follows
+  * Ability to follow any user with a feed page.
