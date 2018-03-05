@@ -57,18 +57,12 @@ div.card-pic {
 img.imgThumbnail {
   width: inherit;
   height: inherit;
-  placeholder: url('./spinner.gif');
+
 }
 
 div.project-pic:hover {
   filter: brightness(80%);
   cursor: pointer;
-}
-
-.test {
-  width: 100px;
-  height: 100px;
-  background: url('../spinner.gif') no-repeat;
 }
 
 div.card-title {
