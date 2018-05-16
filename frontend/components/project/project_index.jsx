@@ -27,7 +27,7 @@ class ProjectIndex extends React.Component {
     this.props.requestAllProjects()
       .then(() => {
         this.setState({
-          projects: this.props.projects.sort((a, b) => a.id > b.id ).reverse()
+          projects: this.props.projects.sort((a, b) => b.id - a.id )
         });
       });
     this.props.fetchUsers();
