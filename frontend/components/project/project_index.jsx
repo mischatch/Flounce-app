@@ -34,7 +34,18 @@ class ProjectIndex extends React.Component {
   }
 
   changeSort(){
-
+    switch (this.state.sort){
+      case 'newest':
+        let newSort = this.props.projects.sort((a, b) => a.id - b.id );
+        this.setState({ projects: newSort, sort: 'oldest' });
+        break;
+      case 'oldest':
+        let newSort2 = this.state.projects.sort((a, b) => b.id - a.id );
+        this.setState({ projects: newSort2, sort: 'newest' });
+        break;
+      default:
+        return null;
+    }
   }
 
   render(){
@@ -50,7 +61,8 @@ class ProjectIndex extends React.Component {
         <div className="ADBOX">
 
           <div className="ADTEXTBOX">Showcase & Discover Creative Work</div>
-          </div>
+        </div>
+        <span className="sort" >sorted by:     <span onClick={this.changeSort}>{this.state.sort}</span></span>
         <div className="content-box">
 
             { projects.map(project => <ProjectItem
