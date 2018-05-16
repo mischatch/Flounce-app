@@ -92,7 +92,7 @@ class ProjectItem extends React.Component {
         </Modal>
       </div>
     </div>
-      )
+  );
 
   }
 }

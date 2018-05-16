@@ -17,13 +17,11 @@ class ProjectIndex extends React.Component {
   }
 
   componentWillMount(){
-    // debugger
     this.props.requestAllProjects();
     this.props.fetchUsers();
   }
 
   componentDidMount(){
-    // debugger
     this.props.requestAllProjects()
       .then(() => {
         this.setState({
