@@ -5,23 +5,46 @@ import ProjectItem from './project_item';
 import ProjectDetailContainer from "./project_detail_container";
 
 class ProjectIndex extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      projects: [],
+      sort: 'newest'
+    };
+
+    this.changeSort = this.changeSort.bind(this);
+  }
 
   componentWillMount(){
+    // debugger
     this.props.requestAllProjects();
     this.props.fetchUsers();
   }
 
   componentDidMount(){
-    this.props.requestAllProjects();
+    // debugger
+    this.props.requestAllProjects()
+      .then(() => {
+        this.setState({
+          projects: this.props.projects.sort((a, b) => a.id > b.id ).reverse()
+        });
+      });
     this.props.fetchUsers();
   }
 
+  changeSort(){
+
+  }
+
   render(){
-    const { projects, users, requestSingleProject, currentUser, requestComments } = this.props;
+    const { users, requestSingleProject, currentUser, requestComments } = this.props;
+    const { projects } = this.state;
     if((Object.keys(this.props).length === 0) || (projects === undefined)){
       return null;
     }
 
+    console.log(projects);
     return (
       <div className="border-box">
         <div className="ADBOX">
@@ -37,7 +60,7 @@ class ProjectIndex extends React.Component {
                                   projectId={project.id}
                                   requestComments={requestComments}
                                   images={project.imageUrls}
-                                  currentUser={this.props.currentUser}/> )}
+                                  currentUser={currentUser}/> )}
         </div>
         <Route path="/projects/:projectId" component={ProjectDetailContainer} />
       </div>

@@ -1,6 +1,6 @@
 
 
-div.ReactModal__Content ReactModal__Content--after-open {
+div.ReactModal__Content {
   border: none;
   background: none;
   z-index: 6;
@@ -16,6 +16,16 @@ div.ReactModal__Content ReactModal__Content--after-open {
   width: 100%;
   height: 100%;
   z-index: 6;
+}
+
+.X{
+  color: white;
+  position: fixed;
+  right: 30px;
+  font-size: 29px;
+  top: 20px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 div.ReactModal__Content::-webkit-scrollbar {

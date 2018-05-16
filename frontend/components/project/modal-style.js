@@ -10,9 +10,9 @@ const style = {
     },
     content : {
       position                   : 'absolute',
-      top                        : '20px',
-      left                       : '70px',
-      right                      : '70px',
+      top                        : '0px',
+      left                       : '0px',
+      right                      : '0px',
       bottom                     : '0px',
       overflow                   : 'auto',
       WebkitOverflowScrolling    : 'touch',
@@ -20,7 +20,7 @@ const style = {
       outline                    : 'none',
       backgroundColor            : 'transparent',
       border                     : 'none',
-      padding                    : '0'
+      padding                    : '20px 70px 0px 70px'
     }
   };
 

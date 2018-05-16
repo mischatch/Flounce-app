@@ -81,7 +81,7 @@ class ProjectItem extends React.Component {
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
           style={style}>
-
+          <div className="X" onClick={this.closeModal}>✕</div>
           <div className="Modal-box">
             <ProjectDetailContainer
                     project={project}
