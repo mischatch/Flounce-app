@@ -53,7 +53,6 @@ class ProjectIndex extends React.Component {
       return null;
     }
 
-    console.log(projects);
     return (
       <div className="border-box">
         <div className="ADBOX">
