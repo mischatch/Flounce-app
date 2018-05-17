@@ -58,6 +58,7 @@
     "readable-stream": "^2.3.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "uglify-js": "^3.3.25",
     "webpack": "^3.12.0"
   }
 }
