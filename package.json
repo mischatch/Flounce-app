@@ -55,6 +55,7 @@
     "react-redux-modal": "^0.5.2",
     "react-router-dom": "^4.2.2",
     "react-z-index": "^2.3.0",
+    "readable-stream": "^2.3.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.12.0"
