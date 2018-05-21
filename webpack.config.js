@@ -1,11 +1,11 @@
+const path = require('path');
+const webpack = require('webpack');
 
-var path = require('path');
-var webpack = require("webpack");
+let plugins = [];
 
-var plugins = [];
-var devPlugins = [];
+const devPlugins = [];
 
-var prodPlugins = [
+const prodPlugins = [
   new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')
@@ -30,7 +30,6 @@ module.exports = {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: "bundle.js"
   },
-  watch: true,
   plugins: plugins,
   module: {
     loaders: [
@@ -42,21 +41,7 @@ module.exports = {
           presets: ['es2015', 'react']
         }
       },
-      // {
-      //   test: /\.(png|svg|jpg|gif)$/,
-      //   exclude: /node_modules/,
-      //   loader: 'file-loader',
-      // }
     ],
-    // rules:[
-    //   {
-    //     test: /\.(png|svg|jpg|gif)$/,
-    //     use: [
-    //       'file-loader'
-    //     ]
-    //   }
-    // ]
-
   },
 
   devtool: 'source-map',
