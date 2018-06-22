@@ -53,13 +53,13 @@ class SessionForm extends React.Component {
         <div className="blue-link">
           Create an account <Link to="/signup" className="link">sign up</Link>
         </div>
-        )
+      );
     } else {
       return (
         <div className="blue-link">
           Already have an account? <Link to="/login" className="link">log in</Link>
         </div>
-        )
+      );
     }
   }
 

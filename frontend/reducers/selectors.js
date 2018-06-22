@@ -15,8 +15,10 @@ export const selectComments = state => {
 };
 
 
-export const selectLikes = state => {
-  return values(state.likes);
+export const selectLikes = (state, id) => {
+  let likes = [];
+  likes = values(state.likes).filter(like => like.projectId === id);
+  return likes;
 };
 
 export const selectUsersProjects = (state, userId) => {

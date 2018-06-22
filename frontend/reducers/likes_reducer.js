@@ -1,4 +1,4 @@
-import { RECEIVE_LIKE, DELETE_LIKE } from '../actions/like_actions';
+import { RECEIVE_LIKE, DELETE_LIKE, RECEIVE_ALL_LIKES } from '../actions/like_actions';
 
 import merge from 'lodash/merge';
 
@@ -13,6 +13,9 @@ const likesReducer = (state = {}, action) => {
     case DELETE_LIKE:
       nextState = merge({}, state);
       delete nextState[action.like.id];
+      return nextState;
+    case RECEIVE_ALL_LIKES:
+      nextState = merge({}, action.likes, state);
       return nextState;
     default:
       return state;

@@ -15,8 +15,13 @@ class ProjectDetail extends React.Component {
     this.renderOrNot = this.renderOrNot.bind(this);
   }
 
+  componentWillMount(){
+    this.props.requestSingleProject(this.props.projectId);
+    // this.props.getAllLikes();
+  }
+
   buttonName(){
-    if(this.props.project.liker_ids === null || !this.props.project.liker_ids.includes(this.props.currentUser.id)){
+    if(this.props.project.liker_id === null || !this.props.project.liker_id.includes(this.props.currentUser.id)){
       return 'Appreciate Project';
     } else {
       return 'Thank You';
@@ -25,16 +30,22 @@ class ProjectDetail extends React.Component {
 
   likeSwitcher(e){
     e.preventDefault();
-
+    const { id, user_id, title, description, liker_id } = this.props.project;
+    let update = { id, user_id, title, description, liker_id };
     const like = {user_id: this.props.currentUser.id,
                 project_id: this.props.projectId };
-    if(this.props.project.liker_ids === null || !this.props.project.liker_ids.includes(this.props.currentUser.id)){
+    if(this.props.project.liker_id === null || !this.props.project.liker_id.includes(this.props.currentUser.id)){
       this.props.createLike(like);
+      update.liker_id.push(this.props.currentUser.id);
     } else {
-
       this.props.unlikeProject(this.props.projectId);
-      // this.props.unlikeProject(likes[this.props.currentUser.id].id);
+      update.liker_id.forEach((item, idx) => {
+        if(item === this.props.currentUser.id){
+          update.liker_id.splice(idx, 1);
+        }
+      });
     }
+    this.props.projectUpdate(update);
   }
 
   renderOrNot(){
@@ -48,7 +59,7 @@ class ProjectDetail extends React.Component {
 
   render(){
     const { project, user, projectId, currentUser } = this.props;
-    
+
     return (
       <div>
         <div className="ProjectModal?">
@@ -74,7 +85,7 @@ class ProjectDetail extends React.Component {
                     {/*                  likes number                   */}
                     <div className="num-likes">
                       <img src="https://s3.us-east-2.amazonaws.com/clone-app-dev/like_icon.svg" />
-                      {this.props.project.liker_ids.length}
+                      {this.props.project.liker_id.length}
                       <img className='smallCommenticon' src='https://s3.us-east-2.amazonaws.com/clone-app-dev/noun_974856_cc.svg' />
                       {project.comment_num}
                     </div>

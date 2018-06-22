@@ -12,18 +12,19 @@ const projectsReducer = (state = {}, action) => {
     // case RECEIVE_USERS:
       return action.projects;
     case RECEIVE_PROJECT:
+    debugger
       const newProject = {[action.project.id]: action.project};
-      nextState = merge({}, newProject, state);
+      nextState = newProject;
       return nextState;
     case RECEIVE_LIKE:
       nextState = merge({}, state);
-      nextState[action.like.project_id].liker_ids.push(action.like.user_id);
+      nextState[action.like.project_id].liker_id.push(action.like.user_id);
       return nextState;
     case DELETE_LIKE:
       nextState = merge({}, state);
-      const index = nextState[action.like.project_id].liker_ids.indexOf(action.like.user_id);
+      const index = nextState[action.like.project_id].liker_id.indexOf(action.like.user_id);
       if(index >= 0){
-        nextState[action.like.project_id].liker_ids.splice(index, 1);
+        nextState[action.like.project_id].liker_id.splice(index, 1);
       }
       return nextState;
     default:

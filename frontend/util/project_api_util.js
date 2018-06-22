@@ -14,10 +14,21 @@ export const fetchSingleProject = id => (
 
 export const createProject = ( project ) => {
   return(
-  $.ajax({
-    method: 'POST',
-    url: '/api/projects/',
-    data: { "project": project },
-  })
-);
+    $.ajax({
+      method: 'POST',
+      url: '/api/projects/',
+      data: { "project": project },
+    })
+  );
+};
+
+export const updateProject = ( project ) => {
+  debugger
+  return (
+    $.ajax({
+      method: 'PATCH',
+      url: `/api/projects/${project.id}`,
+      data: { project },
+    })
+  );
 };
